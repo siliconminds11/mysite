@@ -440,28 +440,28 @@
       <h3><span data-lang="en">Online Reputation Management</span><span data-lang="pt">Gestão de Reputação Online</span></h3>
       <p data-lang="en">Suppress negative content, amplify positive results, and build a Google presence that earns trust at first click.</p>
       <p data-lang="pt">Suprima conteúdos negativos, amplifique resultados positivos e construa uma presença no Google que gera confiança desde o primeiro clique.</p>
-      <button onclick="openModal('orm')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
+      <button type="button" onclick="openModal('orm')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
     <div class="service-card">
       <div class="service-num">02</div><span class="service-icon">🔍</span>
       <h3><span data-lang="en">SEO Strategy</span><span data-lang="pt">Estratégia de SEO</span></h3>
       <p data-lang="en">We engineer search visibility through proven technical SEO, content strategy, and link authority — driving qualified traffic that converts.</p>
       <p data-lang="pt">Criamos visibilidade nos buscadores com SEO técnico comprovado, estratégia de conteúdo e autoridade de links — gerando tráfego qualificado que converte.</p>
-      <button onclick="openModal('seo')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
+      <button type="button" onclick="openModal('seo')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
     <div class="service-card">
       <div class="service-num">03</div><span class="service-icon">⚡</span>
       <h3><span data-lang="en">Crisis Management</span><span data-lang="pt">Gestão de Crises</span></h3>
       <p data-lang="en">When it matters most, we move fast. Our crisis response framework safeguards your reputation and guides your brand through the storm.</p>
       <p data-lang="pt">Quando mais importa, agimos rápido. Nossa estrutura de resposta a crises protege sua reputação e guia sua marca pela turbulência.</p>
-      <button onclick="openModal('crise')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
+      <button type="button" onclick="openModal('crise')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
     <div class="service-card">
       <div class="service-num">04</div><span class="service-icon">📣</span>
       <h3><span data-lang="en">PR Services</span><span data-lang="pt">Assessoria de Imprensa</span></h3>
       <p data-lang="en">Strategic communication plans and storytelling that earns coverage in the publications your audience trusts and reads.</p>
       <p data-lang="pt">Planos de comunicação estratégicos e narrativas que garantem cobertura nas publicações em que seu público confia e lê.</p>
-      <button onclick="openModal('pr')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
+      <button type="button" onclick="openModal('pr')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
   </div>
 </section>
@@ -559,28 +559,28 @@
       </div>
     </div>
 
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-field">
           <label><span data-lang="en">Name</span><span data-lang="pt">Nome</span></label>
-          <input type="text" id="f-name"/>
+          <input type="text" id="f-name" name="name"/>
         </div>
         <div class="form-field">
           <label>Email</label>
-          <input type="email" placeholder="your@email.com"/>
+          <input type="email" name="email" placeholder="your@email.com"/>
         </div>
       </div>
       <div class="form-field">
         <label><span data-lang="en">Phone</span><span data-lang="pt">Telefone</span></label>
-        <input type="tel" placeholder="+1 (000) 000-0000"/>
+        <input type="tel" name="phone" placeholder="+1 (000) 000-0000"/>
       </div>
       <div class="form-field">
         <label><span data-lang="en">Service of Interest</span><span data-lang="pt">Serviço de Interesse</span></label>
-        <select id="svc-select"></select>
+        <select id="svc-select" name="service"></select>
       </div>
       <div class="form-field">
         <label><span data-lang="en">How can we help?</span><span data-lang="pt">Como podemos ajudar?</span></label>
-        <textarea id="f-msg"></textarea>
+        <textarea id="f-msg" name="message"></textarea>
       </div>
       <button type="submit" class="form-submit" id="submit-btn">
         <span data-lang="en">Send Message →</span><span data-lang="pt">Enviar Mensagem →</span>
@@ -742,20 +742,43 @@ setLang(localStorage.getItem('sm-lang') || 'en');
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-// form
-function handleSubmit(e) {
+// form — sends via Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
+const FORMSPREE_ID = 'YOUR_FORM_ID';
+async function handleSubmit(e) {
   e.preventDefault();
   const lang = document.body.classList.contains('lang-pt') ? 'pt' : 'en';
-  const msgs = { en: 'Message Sent ✓', pt: 'Mensagem Enviada ✓' };
-  const originals = { en: 'Send Message →', pt: 'Enviar Mensagem →' };
   const btn = document.getElementById('submit-btn');
-  btn.querySelector('[data-lang="' + lang + '"]').textContent = msgs[lang];
-  btn.style.background = 'var(--bg-300)';
+  const sending = { en: 'Sending…', pt: 'Enviando…' };
+  const success = { en: 'Message Sent ✓', pt: 'Mensagem Enviada ✓' };
+  const error   = { en: 'Error — try again', pt: 'Erro — tente novamente' };
+  const original = { en: 'Send Message →', pt: 'Enviar Mensagem →' };
+  btn.querySelector('[data-lang="' + lang + '"]').textContent = sending[lang];
+  btn.disabled = true;
+  try {
+    const form = document.getElementById('contactForm');
+    const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+    if (res.ok) {
+      btn.querySelector('[data-lang="' + lang + '"]').textContent = success[lang];
+      btn.style.background = 'var(--bg-300)';
+      form.reset();
+    } else {
+      btn.querySelector('[data-lang="' + lang + '"]').textContent = error[lang];
+      btn.style.background = '#c0392b';
+    }
+  } catch(err) {
+    btn.querySelector('[data-lang="' + lang + '"]').textContent = error[lang];
+    btn.style.background = '#c0392b';
+  }
   setTimeout(() => {
-    btn.querySelector('[data-lang="en"]').textContent = originals.en;
-    btn.querySelector('[data-lang="pt"]').textContent = originals.pt;
+    btn.querySelector('[data-lang="en"]').textContent = original.en;
+    btn.querySelector('[data-lang="pt"]').textContent = original.pt;
     btn.style.background = '';
-  }, 3000);
+    btn.disabled = false;
+  }, 4000);
 }
 
 // mobile nav close
