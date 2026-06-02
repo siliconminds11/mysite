@@ -559,7 +559,10 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/team@silicon-minds.com" method="POST" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="_subject" value="New inquiry — Silicon Minds"/>
+      <input type="hidden" name="_captcha" value="false"/>
+      <input type="hidden" name="_template" value="table"/>
       <div class="form-row">
         <div class="form-field">
           <label><span data-lang="en">Name</span><span data-lang="pt">Nome</span></label>
@@ -742,21 +745,20 @@ setLang(localStorage.getItem('sm-lang') || 'en');
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-// form — sends via Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
-const FORMSPREE_ID = 'YOUR_FORM_ID';
+// form — submits to FormSubmit.co (no account needed)
 async function handleSubmit(e) {
   e.preventDefault();
   const lang = document.body.classList.contains('lang-pt') ? 'pt' : 'en';
   const btn = document.getElementById('submit-btn');
-  const sending = { en: 'Sending…', pt: 'Enviando…' };
-  const success = { en: 'Message Sent ✓', pt: 'Mensagem Enviada ✓' };
-  const error   = { en: 'Error — try again', pt: 'Erro — tente novamente' };
+  const sending  = { en: 'Sending…', pt: 'Enviando…' };
+  const success  = { en: 'Message Sent ✓', pt: 'Mensagem Enviada ✓' };
+  const errorMsg = { en: 'Error — try again', pt: 'Erro — tente novamente' };
   const original = { en: 'Send Message →', pt: 'Enviar Mensagem →' };
   btn.querySelector('[data-lang="' + lang + '"]').textContent = sending[lang];
   btn.disabled = true;
+  const form = document.getElementById('contactForm');
   try {
-    const form = document.getElementById('contactForm');
-    const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+    const res = await fetch(form.action, {
       method: 'POST',
       body: new FormData(form),
       headers: { Accept: 'application/json' }
@@ -766,11 +768,10 @@ async function handleSubmit(e) {
       btn.style.background = 'var(--bg-300)';
       form.reset();
     } else {
-      btn.querySelector('[data-lang="' + lang + '"]').textContent = error[lang];
-      btn.style.background = '#c0392b';
+      throw new Error('failed');
     }
-  } catch(err) {
-    btn.querySelector('[data-lang="' + lang + '"]').textContent = error[lang];
+  } catch(_) {
+    btn.querySelector('[data-lang="' + lang + '"]').textContent = errorMsg[lang];
     btn.style.background = '#c0392b';
   }
   setTimeout(() => {
