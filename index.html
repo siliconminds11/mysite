@@ -718,18 +718,16 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-// Wire up modal buttons via addEventListener (avoids CSP issues with inline onclick)
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('[data-modal]').forEach(function(btn) {
-    btn.addEventListener('click', function() { openModal(btn.getAttribute('data-modal')); });
-  });
-  document.getElementById('modalClose').addEventListener('click', closeModal);
-  document.getElementById('mCta').addEventListener('click', closeModal);
-  document.getElementById('modalOverlay').addEventListener('click', function(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModal();
-  });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+// Wire up modal buttons — DOM is already ready since script is at bottom of page
+document.querySelectorAll('[data-modal]').forEach(function(btn) {
+  btn.addEventListener('click', function() { openModal(btn.getAttribute('data-modal')); });
 });
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('mCta').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
 const SERVICES = {
   en: ['Select a service…','Online Reputation Management','SEO Strategy','Crisis Management','PR Services','General Inquiry'],
