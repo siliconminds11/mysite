@@ -294,6 +294,22 @@
   .search-demo-foot .dot { width: 7px; height: 7px; border-radius: 50%; background: #3dd68c; box-shadow: 0 0 10px #3dd68c; animation: pulse 1.6s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
   @media (max-width: 1080px) { .search-demo { display: none; } }
+
+  /* === Service Modals === */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(3,13,6,0.82); z-index: 500; align-items: center; justify-content: center; padding: 1.5rem; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .modal-overlay.open { display: flex; }
+  .modal-box { background: var(--bg-800); border: 1px solid rgba(61,214,140,0.28); border-radius: 1.4rem; padding: 2.6rem; max-width: 520px; width: 100%; position: relative; box-shadow: 0 40px 100px rgba(0,0,0,0.65), 0 0 60px rgba(61,214,140,0.1); max-height: 90vh; overflow-y: auto; }
+  .modal-close { position: absolute; top: 1.2rem; right: 1.2rem; background: rgba(61,214,140,0.1); border: 1px solid rgba(61,214,140,0.2); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; color: var(--bg-400); font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+  .modal-close:hover { background: rgba(61,214,140,0.2); }
+  .modal-tag { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--bg-400); letter-spacing: .15em; text-transform: uppercase; margin-bottom: .9rem; display: block; }
+  .modal-icon { font-size: 2.4rem; margin-bottom: .8rem; display: block; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+  .modal-body { font-size: .92rem; color: var(--gray-dim); line-height: 1.8; margin-bottom: 1.4rem; }
+  .modal-list { list-style: none; padding: 0; margin: 0 0 1.8rem; display: flex; flex-direction: column; gap: .7rem; }
+  .modal-list li { font-size: .88rem; color: var(--bg-300); display: flex; gap: .8rem; align-items: flex-start; }
+  .modal-list li::before { content: '✓'; color: var(--bg-400); flex-shrink: 0; margin-top: 1px; }
+  .modal-cta { display: inline-block; background: var(--bg-400); color: var(--black); border: none; border-radius: 2rem; padding: .85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; }
+  .modal-cta:hover { background: var(--accent); transform: translateY(-1px); }
 </style>
 </head>
 <body class="lang-en">
@@ -424,28 +440,28 @@
       <h3><span data-lang="en">Online Reputation Management</span><span data-lang="pt">Gestão de Reputação Online</span></h3>
       <p data-lang="en">Suppress negative content, amplify positive results, and build a Google presence that earns trust at first click.</p>
       <p data-lang="pt">Suprima conteúdos negativos, amplifique resultados positivos e construa uma presença no Google que gera confiança desde o primeiro clique.</p>
-      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+      <button onclick="openModal('orm')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
     <div class="service-card">
       <div class="service-num">02</div><span class="service-icon">🔍</span>
       <h3><span data-lang="en">SEO Strategy</span><span data-lang="pt">Estratégia de SEO</span></h3>
       <p data-lang="en">We engineer search visibility through proven technical SEO, content strategy, and link authority — driving qualified traffic that converts.</p>
       <p data-lang="pt">Criamos visibilidade nos buscadores com SEO técnico comprovado, estratégia de conteúdo e autoridade de links — gerando tráfego qualificado que converte.</p>
-      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+      <button onclick="openModal('seo')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
     <div class="service-card">
       <div class="service-num">03</div><span class="service-icon">⚡</span>
       <h3><span data-lang="en">Crisis Management</span><span data-lang="pt">Gestão de Crises</span></h3>
       <p data-lang="en">When it matters most, we move fast. Our crisis response framework safeguards your reputation and guides your brand through the storm.</p>
       <p data-lang="pt">Quando mais importa, agimos rápido. Nossa estrutura de resposta a crises protege sua reputação e guia sua marca pela turbulência.</p>
-      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+      <button onclick="openModal('crise')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
     <div class="service-card">
       <div class="service-num">04</div><span class="service-icon">📣</span>
       <h3><span data-lang="en">PR Services</span><span data-lang="pt">Assessoria de Imprensa</span></h3>
       <p data-lang="en">Strategic communication plans and storytelling that earns coverage in the publications your audience trusts and reads.</p>
       <p data-lang="pt">Planos de comunicação estratégicos e narrativas que garantem cobertura nas publicações em que seu público confia e lê.</p>
-      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+      <button onclick="openModal('pr')" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></button>
     </div>
   </div>
 </section>
@@ -608,7 +624,96 @@
   </div>
 </footer>
 
+<!-- SERVICE MODALS -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
+    <span class="modal-tag" id="mTag"></span>
+    <span class="modal-icon" id="mIcon"></span>
+    <div class="modal-title" id="mTitle"></div>
+    <div class="modal-body" id="mBody"></div>
+    <ul class="modal-list" id="mList"></ul>
+    <a href="#contact" class="modal-cta" id="mCta" onclick="closeModal()"></a>
+  </div>
+</div>
+
 <script>
+const MODAL_DATA = {
+  orm: {
+    tag: { en: 'Our Core Service', pt: 'Nosso Serviço Principal' },
+    icon: '🛡️',
+    title: { en: 'Online Reputation Management', pt: 'Gestão de Reputação Online' },
+    body: {
+      en: 'Your online reputation is what people see when they Google your name or company. Silicon Minds actively suppresses negative content, amplifies positive results, and builds a Google presence that earns trust at first click.',
+      pt: 'Sua reputação online é o que aparece quando alguém pesquisa seu nome ou empresa no Google. A Silicon Minds trabalha ativamente para suprimir conteúdos negativos, amplificar resultados positivos e construir uma presença no Google que gera confiança desde o primeiro clique.'
+    },
+    items: {
+      en: ['Suppression of false reviews and defamatory content','Positioning of positive profiles and articles on page one','Continuous AI-powered monitoring 24/7','Custom strategy for individuals and businesses','Monthly reports tracking your progress'],
+      pt: ['Supressão de avaliações falsas e conteúdos difamatórios','Posicionamento de perfis e artigos positivos na primeira página','Monitoramento contínuo com IA 24/7','Estratégia personalizada para pessoas físicas e empresas','Relatórios mensais com evolução dos resultados']
+    }
+  },
+  seo: {
+    tag: { en: 'Strategic Visibility', pt: 'Visibilidade Estratégica' },
+    icon: '🔍',
+    title: { en: 'SEO Strategy', pt: 'Estratégia de SEO' },
+    body: {
+      en: 'Ranking on Google isn\'t luck — it\'s strategy. Our team combines technical SEO, content production, and link authority building to place your brand at the top and consistently attract qualified leads.',
+      pt: 'Estar bem posicionado no Google não é sorte — é estratégia. Nossa equipe combina SEO técnico, produção de conteúdo e construção de autoridade de links para levar sua marca às primeiras posições e atrair clientes qualificados de forma consistente.'
+    },
+    items: {
+      en: ['Full technical audit of your website','Strategic keyword research and mapping','Optimized, high-quality content production','High-authority backlink building','Ongoing ranking and organic traffic reporting'],
+      pt: ['Auditoria técnica completa do seu site','Pesquisa e seleção de palavras-chave estratégicas','Produção de conteúdo otimizado e relevante','Construção de backlinks de alta autoridade','Acompanhamento de rankings e tráfego orgânico']
+    }
+  },
+  crise: {
+    tag: { en: 'Immediate Response', pt: 'Resposta Imediata' },
+    icon: '⚡',
+    title: { en: 'Crisis Management', pt: 'Gestão de Crises' },
+    body: {
+      en: 'When your reputation is under attack, every hour counts. Our crisis response team acts quickly and decisively to contain damage, correct narratives, and guide your brand through turbulent moments — with full discretion.',
+      pt: 'Quando sua reputação está sob ataque, cada hora conta. Nossa equipe de resposta a crises age de forma rápida e coordenada para conter danos, corrigir narrativas e guiar sua marca em momentos turbulentos — com total discrição.'
+    },
+    items: {
+      en: ['Crisis team activation within 24 hours','Intensive monitoring of mentions and media coverage','Counter-narrative strategy and official communications','Removal or suppression of harmful content','Post-crisis report with image recovery plan'],
+      pt: ['Ativação de equipe de crise em até 24 horas','Monitoramento intensivo de menções e cobertura na mídia','Estratégia de contra-narrativa e comunicação oficial','Remoção ou supressão de conteúdos prejudiciais','Relatório pós-crise com plano de recuperação de imagem']
+    }
+  },
+  pr: {
+    tag: { en: 'Strategic Communications', pt: 'Comunicação Estratégica' },
+    icon: '📣',
+    title: { en: 'PR Services', pt: 'Assessoria de Imprensa' },
+    body: {
+      en: 'The right press coverage can transform your brand. We craft strategic communications and media relations that earn coverage in the publications your audience actually reads — positioning you as a trusted authority in your field.',
+      pt: 'A imprensa certa pode transformar sua marca. Desenvolvemos estratégias de comunicação e relações com a mídia que garantem cobertura nas publicações que seu público realmente lê — posicionando você como referência no seu setor.'
+    },
+    items: {
+      en: ['Professional press releases and media materials','Relationships with journalists and specialist outlets','Positioning as an expert and authority source','Editorial planning and story calendar','Coverage in national and international portals'],
+      pt: ['Criação de releases e materiais de imprensa profissionais','Relacionamento com jornalistas e veículos especializados','Posicionamento como especialista e fonte de autoridade','Planejamento editorial e calendário de pautas','Cobertura em portais nacionais e internacionais']
+    }
+  }
+};
+
+function openModal(key) {
+  const lang = document.body.classList.contains('lang-pt') ? 'pt' : 'en';
+  const d = MODAL_DATA[key];
+  document.getElementById('mTag').textContent = d.tag[lang];
+  document.getElementById('mIcon').textContent = d.icon;
+  document.getElementById('mTitle').textContent = d.title[lang];
+  document.getElementById('mBody').textContent = d.body[lang];
+  const ul = document.getElementById('mList');
+  ul.innerHTML = '';
+  d.items[lang].forEach(item => { const li = document.createElement('li'); li.textContent = item; ul.appendChild(li); });
+  document.getElementById('mCta').textContent = lang === 'pt' ? 'Solicitar Proposta Grátis →' : 'Get My Free Proposal →';
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOverlayClick(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
 const SERVICES = {
   en: ['Select a service…','Online Reputation Management','SEO Strategy','Crisis Management','PR Services','General Inquiry'],
   pt: ['Selecione um serviço…','Gestão de Reputação Online','Estratégia de SEO','Gestão de Crises','Assessoria de Imprensa','Consulta Geral']
