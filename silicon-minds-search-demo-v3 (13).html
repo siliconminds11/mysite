@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Silicon Minds — Online Reputation Management | Miami</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg-900: #061a0e;
+    --bg-800: #0a2e18;
+    --bg-700: #134d28;
+    --bg-400: #3dd68c;
+    --bg-300: #7ee8b0;
+    --black:     #030d06;
+    --white:     #edfaf2;
+    --gray-dim:  #6b9e7a;
+    --accent:    #a8ffcc;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: .5; }
+
+  /* LANG */
+  [data-lang] { display: none; }
+  body.lang-en [data-lang="en"] { display: revert; }
+  body.lang-pt [data-lang="pt"] { display: revert; }
+  span[data-lang] { display: none; }
+  body.lang-en span[data-lang="en"] { display: inline; }
+  body.lang-pt span[data-lang="pt"] { display: inline; }
+
+  .lang-switcher { display: flex; border: 1px solid rgba(160,160,160,.25); border-radius: 2rem; overflow: hidden; }
+  .lang-btn { padding: .35rem .9rem; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; border: none; background: transparent; color: var(--gray-dim); transition: background .2s, color .2s; font-family: 'DM Sans', sans-serif; }
+  .lang-btn.active { background: var(--bg-400); color: var(--black); }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.2rem 5%; border-bottom: 1px solid rgba(160,160,160,.3); background: rgba(6,13,8,.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: -.5px; flex-shrink: 0; }
+  .nav-logo span { color: var(--bg-400); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-dim); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--bg-300); }
+  .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+  .nav-cta { background: var(--bg-400); color: var(--black); border: none; padding: .5rem 1.3rem; border-radius: 2rem; font-family: 'DM Sans', sans-serif; font-size: .78rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+  nav.open .nav-links { display: flex; flex-direction: column; position: fixed; inset: 0; background: var(--black); justify-content: center; align-items: center; gap: 2.5rem; z-index: 99; }
+  nav.open .nav-links a { font-size: 1.5rem; }
+
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 5% 6rem; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, #0f4d2e 0%, #082e18 45%, #061a0e 100%);
+    background-size: cover; background-position: center top;
+    z-index: 0; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0;
+    background: linear-gradient(110deg, rgba(3,13,6,0.75) 0%, rgba(8,46,24,0.4) 50%, rgba(3,13,6,0.82) 100%); mix-blend-mode: multiply;
+    z-index: 1; }
+  .hero-grid-lines { position: absolute; inset: 0; z-index: 2; background-image: linear-gradient(rgba(160,160,160,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(160,160,160,.06) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%); }
+  .hero-tag { font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--bg-400); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; }
+  .hero-tag::before { content: '// '; opacity: .5; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 7rem); font-weight: 900; line-height: 1.0; letter-spacing: -.03em; position: relative; z-index: 3; max-width: 900px; }
+  h1 em { font-style: italic; color: var(--bg-400); }
+  .hero-sub { font-size: clamp(.95rem, 1.5vw, 1.15rem); color: var(--gray-dim); line-height: 1.7; max-width: 540px; margin-top: 1.8rem; position: relative; z-index: 3; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.8rem; position: relative; z-index: 3; }
+  .btn-primary { background: var(--bg-400); color: var(--black); border: none; padding: .85rem 2.2rem; border-radius: 2rem; font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 0 28px rgba(61,214,140,.45), 0 2px 8px rgba(0,0,0,.6); }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 0 50px rgba(61,214,140,.65), 0 4px 16px rgba(0,0,0,.7); }
+  .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,.2); padding: .85rem 2.2rem; border-radius: 2rem; font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: border-color .2s, color .2s, transform .15s; }
+  .btn-ghost:hover { border-color: var(--bg-400); color: var(--bg-300); transform: translateY(-2px); }
+  .hero-left { position: relative; z-index: 3; max-width: 52%; }
+  @media (max-width: 1080px) { .hero-left { max-width: 100%; } }
+  .ticker-wrap { position: relative; z-index: 3; margin-top: 4rem; overflow: hidden; border-top: 1px solid rgba(160,160,160,.15); padding-top: 1.5rem; }
+  .ticker { display: flex; gap: 3rem; animation: ticker 26s linear infinite; width: max-content; }
+  .ticker-item { font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--bg-400); opacity: .65; white-space: nowrap; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTIONS */
+  section { padding: 7rem 5%; }
+  .section-tag { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--bg-400); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -.02em; max-width: 700px; }
+  h2 em { font-style: italic; color: var(--bg-400); }
+  .section-sub { color: var(--gray-dim); font-size: 1.05rem; line-height: 1.8; max-width: 600px; margin-top: 1.2rem; }
+
+  /* ABOUT */
+  #about { background: var(--bg-900); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .about-body { color: var(--gray-dim); line-height: 1.85; font-size: .95rem; }
+  .about-body + .about-body { margin-top: 1.2rem; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(61,214,140,.12); border: 1px solid rgba(61,214,140,.28); border-radius: 1.2rem; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(61,214,140,.1); align-self: start; margin-top: -7rem; }
+  .stat-box { background: var(--bg-800); padding: 2.4rem 2rem; display: flex; flex-direction: column; gap: .6rem; align-items: flex-start; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 900; color: var(--bg-400); line-height: 1; text-shadow: 0 0 30px rgba(61,214,140,.3); }
+  .stat-label { font-size: .82rem; color: var(--gray-dim); letter-spacing: .06em; margin-top: .2rem; }
+  .cities { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+  .city-badge { display: flex; align-items: center; gap: .4rem; background: rgba(160,160,160,.08); border: 1px solid rgba(160,160,160,.18); border-radius: 2rem; padding: .4rem 1rem; font-size: .8rem; color: var(--gray-dim); }
+
+  /* SERVICES */
+  #services { background: #0f2a18; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; margin-top: 4rem;
+  }
+  .service-card {
+    background: #3dd68c;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 1.4rem;
+    padding: 2.8rem 2.6rem;
+    position: relative; overflow: hidden;
+    transition: background .3s, border-color .3s, transform .2s, box-shadow .3s;
+    box-shadow: 0 4px 32px rgba(61,214,140,0.25), 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .service-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.15), transparent 65%);
+    opacity: 0; transition: opacity .4s;
+  }
+  .service-card:hover {
+    background: #4ae89a;
+    border-color: rgba(255,255,255,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(61,214,140,0.35), 0 0 40px rgba(61,214,140,0.2);
+  }
+  .service-card:hover::before { opacity: 1; }
+  .service-num {
+    font-family: 'DM Mono', monospace; font-size: .72rem;
+    color: #051a0c; opacity: .6; margin-bottom: 1.4rem;
+    letter-spacing: .12em; display: block;
+  }
+  .service-icon {
+    font-size: 2.4rem; margin-bottom: 1.2rem; display: block;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem; font-weight: 700; margin-bottom: 1rem;
+    color: #051a0c; line-height: 1.25;
+  }
+  .service-card p {
+    font-size: .92rem; color: #0d3520; line-height: 1.75;
+  }
+  .service-link {
+    display: inline-flex; align-items: center; gap: .5rem;
+    margin-top: 1.8rem; font-size: .82rem; font-weight: 700;
+    color: #051a0c; text-decoration: none; letter-spacing: .06em;
+    transition: gap .2s, background .2s, box-shadow .2s;
+    padding: .55rem 1.4rem;
+    border: 1px solid rgba(5,26,12,0.3);
+    border-radius: 2rem;
+    background: rgba(5,26,12,0.10);
+  }
+  .service-link:hover { gap: .8rem; background: rgba(5,26,12,0.18); border-color: rgba(5,26,12,0.5); }
+
+  /* WHY */
+  #why { background: var(--bg-900); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; margin-top: 4rem; }
+  .why-item { border-bottom: 1px solid rgba(160,160,160,.3); padding: 1.8rem 0; display: grid; grid-template-columns: 2rem 1fr; gap: 1.2rem; align-items: start; }
+  .why-item:first-child { border-top: 1px solid rgba(160,160,160,.12); }
+  .why-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bg-400); margin-top: .45rem; box-shadow: 0 0 12px var(--bg-400), 0 0 4px rgba(255,255,255,.4); }
+  .why-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: .4rem; }
+  .why-item p { font-size: .85rem; color: var(--gray-dim); line-height: 1.65; }
+  .why-highlight { background: var(--bg-800); border: 1px solid rgba(160,160,160,.35); border-radius: 1.2rem; padding: 3rem; position: relative; overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,.5); }
+  .why-highlight::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 14rem; font-weight: 900; color: var(--bg-400); opacity: .06; position: absolute; top: -2rem; left: 1rem; line-height: 1; }
+  .why-quote { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; line-height: 1.5; color: var(--white); position: relative; z-index: 1; }
+  .why-quote-author { margin-top: 1.5rem; font-size: .8rem; color: var(--bg-400); letter-spacing: .08em; text-transform: uppercase; }
+  .goals-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+  .goals-list li { display: flex; align-items: center; gap: .8rem; font-size: .88rem; color: var(--gray-dim); }
+  .goals-list li span.check { color: var(--bg-400); font-size: 1rem; }
+
+  /* BAND */
+  .band { background: var(--bg-700); padding: 3.5rem 5%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .band-text h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; }
+  .band-text p { color: rgba(255,255,255,.7); margin-top: .4rem; font-size: .95rem; }
+  .band-badge { display: flex; align-items: center; gap: .6rem; background: rgba(0,0,0,.2); border: 1px solid rgba(255,255,255,.15); border-radius: 2rem; padding: .8rem 1.8rem; font-size: .85rem; font-weight: 600; white-space: nowrap; }
+  .band-badge::before { content: '🔒'; font-size: 1.1rem; }
+
+  /* PARTNERS */
+  #partners { background: var(--black); }
+  .partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+  .partner-card { border: 1px solid rgba(160,160,160,.28); border-radius: 1rem; padding: 2.4rem; background: rgba(160,160,160,.03); transition: border-color .3s, background .3s; }
+  .partner-card:hover { border-color: rgba(160,160,160,.35); background: rgba(160,160,160,.06); }
+  .partner-card h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: .7rem; }
+  .partner-card p { font-size: .85rem; color: var(--gray-dim); line-height: 1.7; }
+  .partner-link { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1.2rem; font-size: .78rem; font-weight: 600; color: var(--bg-400); text-decoration: none; transition: gap .2s; }
+  .partner-link:hover { gap: .7rem; }
+
+  /* CONTACT */
+  #contact { background: var(--bg-900); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; margin-top: 4rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+  .contact-item h4 { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--bg-400); margin-bottom: .4rem; font-family: 'DM Mono', monospace; }
+  .contact-item a, .contact-item p { color: var(--white); text-decoration: none; font-size: 1rem; }
+  .contact-item a:hover { color: var(--bg-300); }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: .4rem; }
+  .form-field label { font-size: .75rem; color: var(--gray-dim); letter-spacing: .06em; text-transform: uppercase; }
+  .form-field input, .form-field textarea, .form-field select { background: rgba(160,160,160,.05); border: 1px solid rgba(160,160,160,.18); border-radius: .5rem; padding: .85rem 1rem; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: .9rem; outline: none; transition: border-color .2s, background .2s; }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--bg-400); background: rgba(160,160,160,.08); }
+  .form-field select option { background: var(--bg-800); }
+  .form-field textarea { min-height: 120px; resize: vertical; }
+  .form-submit { background: var(--bg-400); color: var(--black); border: none; padding: 1rem 2rem; border-radius: .5rem; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 700; cursor: pointer; transition: background .2s, transform .15s; align-self: flex-start; }
+  .form-submit:hover { background: var(--accent); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer { background: var(--black); border-top: 1px solid rgba(160,160,160,.1); padding: 4rem 5% 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(160,160,160,.1); }
+  .footer-brand p { font-size: .88rem; color: var(--gray-dim); line-height: 1.7; margin-top: 1rem; max-width: 300px; }
+  .footer-col h5 { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bg-400); margin-bottom: 1.2rem; font-family: 'DM Mono', monospace; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .footer-col a { color: var(--gray-dim); text-decoration: none; font-size: .88rem; transition: color .2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+  .footer-bottom p { font-size: .78rem; color: var(--gray-dim); }
+  .footer-socials { display: flex; gap: 1rem; }
+  .social-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(160,160,160,.2); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: .85rem; transition: border-color .2s, background .2s; }
+  .social-btn:hover { border-color: var(--bg-400); background: rgba(160,160,160,.1); }
+
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid > .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 2.6rem; }
+    section { padding: 5rem 5%; }
+    .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .band { flex-direction: column; text-align: center; }
+  }
+  /* === Search Demo Widget === */
+  .search-demo {
+    position: absolute; top: 50%; right: 5%; transform: translateY(-50%);
+    width: min(600px, 44vw); z-index: 3;
+    background: rgba(6,18,10,0.88);
+    border: 1px solid rgba(61,214,140,0.28);
+    border-radius: 18px; padding: 24px 24px 12px;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.65), 0 0 80px rgba(61,214,140,0.15), inset 0 1px 0 rgba(61,214,140,0.12);
+    font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+  /* browser chrome dots */
+  .search-demo-chrome { display: flex; align-items: center; gap: 7px; margin-bottom: 16px; }
+  .chrome-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .chrome-dot:nth-child(1) { background: #ff5f57; }
+  .chrome-dot:nth-child(2) { background: #febc2e; }
+  .chrome-dot:nth-child(3) { background: #28c840; }
+  .search-demo-bar { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); border-radius: 999px; padding: 13px 22px; margin-bottom: 20px; }
+  .search-demo-g { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 15px; letter-spacing: -.5px; }
+  .search-demo-g .g-b { color: #4285F4; } .search-demo-g .g-r { color: #EA4335; } .search-demo-g .g-y { color: #FBBC05; } .search-demo-g .g-g { color: #34A853; }
+  .search-demo-query { color: #edfaf2; font-size: 15px; flex: 1; font-weight: 500; }
+  .search-demo-query::after { content: '|'; color: #3dd68c; animation: blink 1s steps(2) infinite; margin-left: 2px; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .search-demo-list { display: flex; flex-direction: column; gap: 10px; }
+  .search-result {
+    position: relative; padding: 16px 18px; border-radius: 12px;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+    transition: all .55s ease; overflow: hidden;
+  }
+  .search-result .sr-url { font-size: 12.5px; color: #3dd68c; margin-bottom: 4px; opacity: .8; }
+  .search-result .sr-title { font-size: 16px; color: #d8f0e3; font-weight: 600; line-height: 1.3; margin-bottom: 5px; }
+  .search-result .sr-snippet { font-size: 13px; color: #6b9e7a; line-height: 1.5; }
+  .search-result.bad { border-color: rgba(255,107,107,0.12); }
+  .search-result.bad .sr-url { color: #ff8b80; opacity: .7; }
+  .search-result.bad .sr-title { color: #ffaaa4; }
+  .search-result.good { border-color: rgba(61,214,140,0.15); }
+  .search-result.good .sr-title { color: #7ee8b0; }
+  .search-result .stamp {
+    position: absolute; top: 50%; right: 18px;
+    transform: translateY(-50%) rotate(-8deg) scale(0.5);
+    font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 700;
+    letter-spacing: .14em; color: #ff6b6b; border: 2.5px solid #ff6b6b;
+    padding: 4px 10px; border-radius: 5px; opacity: 0;
+    transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
+    pointer-events: none; background: rgba(255,50,50,0.06);
+  }
+  .search-result.removing { background: rgba(255,90,90,0.07); border-color: rgba(255,107,107,0.4); }
+  .search-result.removing .sr-title,
+  .search-result.removing .sr-snippet,
+  .search-result.removing .sr-url { text-decoration: line-through; opacity: .4; transition: all .4s; }
+  .search-result.removing .stamp { opacity: 1; transform: translateY(-50%) rotate(-8deg) scale(1); }
+  .search-result.gone { max-height: 0; padding-top: 0; padding-bottom: 0; margin: 0; opacity: 0; border-width: 0; transform: translateX(50px); }
+  .search-result.incoming { animation: slideIn .6s ease both; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+  .search-demo-foot { display: flex; align-items: center; gap: 8px; padding: 14px 4px 4px; font-size: 11px; color: #3dd68c; font-family: 'DM Mono', monospace; letter-spacing: .1em; border-top: 1px solid rgba(61,214,140,0.1); margin-top: 8px; }
+  .search-demo-foot .dot { width: 7px; height: 7px; border-radius: 50%; background: #3dd68c; box-shadow: 0 0 10px #3dd68c; animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+  @media (max-width: 1080px) { .search-demo { display: none; } }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Silicon<span>Minds</span></a>
+  <ul class="nav-links">
+    <li><a href="#about"><span data-lang="en">About</span><span data-lang="pt">Sobre</span></a></li>
+    <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a></li>
+    <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que Nós</span></a></li>
+    <li><a href="#partners"><span data-lang="en">Partners</span><span data-lang="pt">Parceiros</span></a></li>
+    <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+    </div>
+    <a href="#contact" class="nav-cta"><span data-lang="en">Get My Proposal →</span><span data-lang="pt">Solicitar Proposta →</span></a>
+    <div class="hamburger" onclick="document.getElementById('navbar').classList.toggle('open')"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="search-demo" aria-hidden="true">
+    <div class="search-demo-chrome">
+      <div class="chrome-dot"></div>
+      <div class="chrome-dot"></div>
+      <div class="chrome-dot"></div>
+    </div>
+    <div class="search-demo-bar">
+      <svg class="search-demo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8cf5b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      <span class="search-demo-query">your name</span>
+    </div>
+    <div class="search-demo-list" id="searchDemoList">
+      <div class="search-result good">
+        <div class="sr-url">yourname.com</div>
+        <div class="sr-title">Official Site — Award-Winning Professional</div>
+        <div class="sr-snippet">★★★★★ Featured in Forbes, Inc., and Bloomberg.</div>
+      </div>
+      <div class="search-result bad" data-remove="1">
+        <div class="sr-url">ripoff-complaints.com › archive › 2018</div>
+        <div class="sr-title">Outdated 1-Star Review from 2018</div>
+        <div class="sr-snippet">Unverified claim from an anonymous poster, 7 years ago…</div>
+        <span class="stamp">SUPPRESSED</span>
+      </div>
+      <div class="search-result bad" data-remove="2">
+        <div class="sr-url">old-forum.net › thread</div>
+        <div class="sr-title">Anonymous Forum Post — Defamatory Content</div>
+        <div class="sr-snippet">Flagged for false information, scheduled for de-indexing.</div>
+        <span class="stamp">SUPPRESSED</span>
+      </div>
+      <div class="search-result good">
+        <div class="sr-url">linkedin.com/in/yourname</div>
+        <div class="sr-title">Verified LinkedIn Profile · 15k+ followers</div>
+        <div class="sr-snippet">★★★★★ Industry leader with a decade of client wins.</div>
+      </div>
+    </div>
+    <div class="search-demo-foot"><span class="dot"></span><span>Reputation cleanup · live</span></div>
+  </div>
+  <div class="hero-left">
+  <p class="hero-tag"><span data-lang="en">Miami · Digital Reputation Experts · Est. 2018</span><span data-lang="pt">Miami · Especialistas em Reputação Digital · Desde 2018</span></p>
+  <h1 data-lang="en">Control What Google<br><em>Says About You.</em></h1>
+  <h1 data-lang="pt">Controle o Que o Google<br><em>Diz Sobre Você.</em></h1>
+  <p class="hero-sub" data-lang="en">Silicon Minds builds and protects the online reputation businesses and individuals rely on to win clients, close deals, and grow with confidence.</p>
+  <p class="hero-sub" data-lang="pt">A Silicon Minds constrói e protege a reputação online que empresas e profissionais precisam para conquistar clientes, fechar negócios e crescer com segurança.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary"><span data-lang="en">Get My Free Proposal →</span><span data-lang="pt">Solicitar Proposta Grátis →</span></a>
+    <a href="#services" class="btn-ghost"><span data-lang="en">Explore Services</span><span data-lang="pt">Ver Serviços</span></a>
+  </div>
+  </div><!-- /.hero-left -->
+  <div class="ticker-wrap">
+    <div class="ticker" data-lang="en">
+      <span class="ticker-item">Online Reputation Management</span><span class="ticker-item">·</span><span class="ticker-item">SEO Strategy</span><span class="ticker-item">·</span><span class="ticker-item">Crisis Management</span><span class="ticker-item">·</span><span class="ticker-item">PR Services</span><span class="ticker-item">·</span><span class="ticker-item">Brand Protection</span><span class="ticker-item">·</span><span class="ticker-item">Google Search Repair</span><span class="ticker-item">·</span><span class="ticker-item">Content Marketing</span><span class="ticker-item">·</span><span class="ticker-item">Online Reputation Management</span><span class="ticker-item">·</span><span class="ticker-item">SEO Strategy</span><span class="ticker-item">·</span><span class="ticker-item">Crisis Management</span><span class="ticker-item">·</span><span class="ticker-item">PR Services</span><span class="ticker-item">·</span><span class="ticker-item">Brand Protection</span><span class="ticker-item">·</span><span class="ticker-item">Google Search Repair</span><span class="ticker-item">·</span><span class="ticker-item">Content Marketing</span><span class="ticker-item">·</span>
+    </div>
+    <div class="ticker" data-lang="pt">
+      <span class="ticker-item">Gestão de Reputação Online</span><span class="ticker-item">·</span><span class="ticker-item">Estratégia de SEO</span><span class="ticker-item">·</span><span class="ticker-item">Gestão de Crises</span><span class="ticker-item">·</span><span class="ticker-item">Assessoria de Imprensa</span><span class="ticker-item">·</span><span class="ticker-item">Proteção de Marca</span><span class="ticker-item">·</span><span class="ticker-item">Reparo no Google</span><span class="ticker-item">·</span><span class="ticker-item">Marketing de Conteúdo</span><span class="ticker-item">·</span><span class="ticker-item">Gestão de Reputação Online</span><span class="ticker-item">·</span><span class="ticker-item">Estratégia de SEO</span><span class="ticker-item">·</span><span class="ticker-item">Gestão de Crises</span><span class="ticker-item">·</span><span class="ticker-item">Assessoria de Imprensa</span><span class="ticker-item">·</span><span class="ticker-item">Proteção de Marca</span><span class="ticker-item">·</span><span class="ticker-item">Reparo no Google</span><span class="ticker-item">·</span><span class="ticker-item">Marketing de Conteúdo</span><span class="ticker-item">·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="section-tag"><span data-lang="en">About Silicon Minds</span><span data-lang="pt">Sobre a Silicon Minds</span></span>
+  <h2 data-lang="en">A strategic reputation platform for businesses &amp; <em>individuals.</em></h2>
+  <h2 data-lang="pt">Uma plataforma estratégica de reputação para empresas &amp; <em>profissionais.</em></h2>
+  <p class="section-sub" data-lang="en">We live in an era where your Google results are your first handshake. Silicon Minds actively manages, repairs, and elevates your digital presence — so opportunity finds you first.</p>
+  <p class="section-sub" data-lang="pt">Vivemos numa era em que seus resultados no Google são o primeiro aperto de mão. A Silicon Minds gerencia, repara e eleva sua presença digital — para que as oportunidades cheguem até você primeiro.</p>
+
+  <div class="about-grid fade-up">
+    <div>
+      <p class="about-body" data-lang="en">Reputation management is no longer optional — it's the foundation of modern business. Whether you're a company facing damaging search results or a professional building your personal brand, we bring cutting-edge tools, AI-powered monitoring, and expert human strategy to every engagement.</p>
+      <p class="about-body" data-lang="pt">Gestão de reputação não é mais opcional — é a base do negócio moderno. Seja uma empresa com resultados de busca prejudiciais ou um profissional construindo sua marca pessoal, trazemos ferramentas de ponta, monitoramento com IA e estratégia humana especializada a cada projeto.</p>
+      <p class="about-body" style="margin-top:1.2rem" data-lang="en">Based in Miami. Operating globally.</p>
+      <p class="about-body" style="margin-top:1.2rem" data-lang="pt">Sediada em Miami. Atuando globalmente.</p>
+      <div class="cities">
+        <div class="city-badge">🇺🇸 Miami</div>
+        <div class="city-badge">🌎 New York</div>
+        <div class="city-badge">🌍 London</div>
+        <div class="city-badge">🌏 Dubai</div>
+        <div class="city-badge">🌎 São Paulo</div>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box"><span class="stat-num">500+</span><span class="stat-label"><span data-lang="en">Clients Protected</span><span data-lang="pt">Clientes Protegidos</span></span></div>
+      <div class="stat-box"><span class="stat-num">98%</span><span class="stat-label"><span data-lang="en">Client Satisfaction</span><span data-lang="pt">Satisfação dos Clientes</span></span></div>
+      <div class="stat-box"><span class="stat-num">24/7</span><span class="stat-label"><span data-lang="en">AI Monitoring</span><span data-lang="pt">Monitoramento com IA</span></span></div>
+      <div class="stat-box"><span class="stat-num">6+</span><span class="stat-label"><span data-lang="en">Years of Experience</span><span data-lang="pt">Anos de Experiência</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <span class="section-tag"><span data-lang="en">Our Services</span><span data-lang="pt">Nossos Serviços</span></span>
+  <h2 data-lang="en">Strategic access for your <em>digital presence.</em></h2>
+  <h2 data-lang="pt">Acesso estratégico para sua <em>presença digital.</em></h2>
+  <p class="section-sub" data-lang="en">From reputation repair to search domination — our full suite is designed to make your online presence work for you, not against you.</p>
+  <p class="section-sub" data-lang="pt">Da reparação de reputação ao domínio nos buscadores — nossa solução completa faz sua presença online trabalhar a seu favor.</p>
+
+  <div class="services-grid fade-up">
+    <div class="service-card">
+      <div class="service-num">01</div><span class="service-icon">🛡️</span>
+      <h3><span data-lang="en">Online Reputation Management</span><span data-lang="pt">Gestão de Reputação Online</span></h3>
+      <p data-lang="en">Suppress negative content, amplify positive results, and build a Google presence that earns trust at first click.</p>
+      <p data-lang="pt">Suprima conteúdos negativos, amplifique resultados positivos e construa uma presença no Google que gera confiança desde o primeiro clique.</p>
+      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div><span class="service-icon">🔍</span>
+      <h3><span data-lang="en">SEO Strategy</span><span data-lang="pt">Estratégia de SEO</span></h3>
+      <p data-lang="en">We engineer search visibility through proven technical SEO, content strategy, and link authority — driving qualified traffic that converts.</p>
+      <p data-lang="pt">Criamos visibilidade nos buscadores com SEO técnico comprovado, estratégia de conteúdo e autoridade de links — gerando tráfego qualificado que converte.</p>
+      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div><span class="service-icon">⚡</span>
+      <h3><span data-lang="en">Crisis Management</span><span data-lang="pt">Gestão de Crises</span></h3>
+      <p data-lang="en">When it matters most, we move fast. Our crisis response framework safeguards your reputation and guides your brand through the storm.</p>
+      <p data-lang="pt">Quando mais importa, agimos rápido. Nossa estrutura de resposta a crises protege sua reputação e guia sua marca pela turbulência.</p>
+      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div><span class="service-icon">📣</span>
+      <h3><span data-lang="en">PR Services</span><span data-lang="pt">Assessoria de Imprensa</span></h3>
+      <p data-lang="en">Strategic communication plans and storytelling that earns coverage in the publications your audience trusts and reads.</p>
+      <p data-lang="pt">Planos de comunicação estratégicos e narrativas que garantem cobertura nas publicações em que seu público confia e lê.</p>
+      <a href="#contact" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <span class="section-tag"><span data-lang="en">Why Silicon Minds</span><span data-lang="pt">Por Que a Silicon Minds</span></span>
+  <h2 data-lang="en">We do the heavy lifting while you <em>run your business.</em></h2>
+  <h2 data-lang="pt">Fazemos o trabalho pesado enquanto você <em>cuida do seu negócio.</em></h2>
+
+  <div class="why-grid fade-up">
+    <div>
+      <div class="why-item"><div class="why-dot"></div><div>
+        <h4><span data-lang="en">AI-Powered Monitoring</span><span data-lang="pt">Monitoramento com IA</span></h4>
+        <p data-lang="en">Proprietary robots scan the web 24/7 so you're never caught off-guard by damaging content.</p>
+        <p data-lang="pt">Robôs próprios varrem a web 24/7 para que você nunca seja surpreendido por conteúdo prejudicial.</p>
+      </div></div>
+      <div class="why-item"><div class="why-dot"></div><div>
+        <h4><span data-lang="en">100% Confidential</span><span data-lang="pt">100% Confidencial</span></h4>
+        <p data-lang="en">Every engagement operates under a strict NDA. Your strategy, your results — completely discreet.</p>
+        <p data-lang="pt">Cada projeto opera sob NDA rigoroso. Sua estratégia, seus resultados — total discrição.</p>
+      </div></div>
+      <div class="why-item"><div class="why-dot"></div><div>
+        <h4><span data-lang="en">Elite Writing Team</span><span data-lang="pt">Equipe de Redação de Elite</span></h4>
+        <p data-lang="en">Technical writers, editors, and content strategists who craft narratives that rank and persuade.</p>
+        <p data-lang="pt">Redatores técnicos, editores e estrategistas de conteúdo que criam narrativas que rankeiam e convencem.</p>
+      </div></div>
+      <div class="why-item"><div class="why-dot"></div><div>
+        <h4><span data-lang="en">Full-Funnel Reporting</span><span data-lang="pt">Relatórios Completos</span></h4>
+        <p data-lang="en">Transparent, metrics-driven reports so you always know exactly what's working and why.</p>
+        <p data-lang="pt">Relatórios transparentes orientados por métricas para que você sempre saiba o que funciona e por quê.</p>
+      </div></div>
+      <div class="why-item"><div class="why-dot"></div><div>
+        <h4><span data-lang="en">Speak to a Marketer, Not a Salesperson</span><span data-lang="pt">Fale com um Especialista, Não um Vendedor</span></h4>
+        <p data-lang="en">Every conversation is a real strategy session — no pitches, just honest advice from specialists.</p>
+        <p data-lang="pt">Cada conversa é uma sessão real de estratégia — sem script de vendas, apenas conselhos honestos.</p>
+      </div></div>
+    </div>
+
+    <div class="why-highlight">
+      <p class="why-quote" data-lang="en">"Reputation management is no longer a 'nice to have' — it has become essential for both business and individual success."</p>
+      <p class="why-quote" data-lang="pt">"Gestão de reputação não é mais um diferencial — tornou-se essencial para o sucesso de empresas e indivíduos."</p>
+      <p class="why-quote-author">— Silicon Minds · Miami, FL</p>
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(160,160,160,.2)">
+        <p style="font-size:.82rem;color:var(--gray-dim);margin-bottom:1.4rem;text-transform:uppercase;letter-spacing:.1em;font-family:'DM Mono',monospace"><span data-lang="en">Our Goals</span><span data-lang="pt">Nossos Objetivos</span></p>
+        <ul class="goals-list">
+          <li><span class="check">✓</span><span data-lang="en">Generate positive reviews &amp; manage reputation</span><span data-lang="pt">Gerar avaliações positivas e gerenciar a reputação</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Improve local ranking in online searches</span><span data-lang="pt">Melhorar o ranking local nas buscas online</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Reach new customers and gain leads</span><span data-lang="pt">Alcançar novos clientes e gerar leads</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Control crises of all kinds</span><span data-lang="pt">Controlar crises de qualquer natureza</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="band fade-up">
+  <div class="band-text">
+    <h3><span data-lang="en">100% Confidential &amp; Discreet</span><span data-lang="pt">100% Confidencial e Discreto</span></h3>
+    <p data-lang="en">All work is protected under a non-disclosure agreement from day one.</p>
+    <p data-lang="pt">Todo o trabalho é protegido por acordo de confidencialidade desde o primeiro dia.</p>
+  </div>
+  <div class="band-badge"><span data-lang="en">NDA Protected · Fully Discreet</span><span data-lang="pt">Protegido por NDA · Total Discrição</span></div>
+  <a href="#contact" class="btn-primary"><span data-lang="en">Start Your Proposal →</span><span data-lang="pt">Solicitar Proposta →</span></a>
+</div>
+
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-tag"><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></span>
+  <h2 data-lang="en">Let's build your next <em>digital chapter.</em></h2>
+  <h2 data-lang="pt">Vamos construir seu próximo <em>capítulo digital.</em></h2>
+  <p class="section-sub" data-lang="en">Our team is ready to understand your context and deliver a custom strategy. No commitment, no sales pitch — just a real conversation.</p>
+  <p class="section-sub" data-lang="pt">Nossa equipe está pronta para entender seu contexto e entregar uma estratégia personalizada. Sem compromisso, sem pitch de vendas — apenas uma conversa real.</p>
+
+  <div class="contact-grid fade-up">
+    <div class="contact-info">
+      <div class="contact-item">
+        <h4><span data-lang="en">Phone</span><span data-lang="pt">Telefone</span></h4>
+        <a href="tel:+17863840201">+1 786-384-0201</a>
+      </div>
+      <div class="contact-item">
+        <h4>Email</h4>
+        <a href="mailto:team@silicon-minds.com">team@silicon-minds.com</a>
+      </div>
+      <div class="contact-item">
+        <h4><span data-lang="en">Office</span><span data-lang="pt">Escritório</span></h4>
+        <p>95 Merrick Way, 3rd Floor<br>Coral Gables, FL 33134</p>
+      </div>
+      <div class="contact-item">
+        <h4><span data-lang="en">Hours</span><span data-lang="pt">Horário</span></h4>
+        <p><span data-lang="en">Mon–Fri · 10am – 5pm EST</span><span data-lang="pt">Seg–Sex · 10h às 17h EST</span></p>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label><span data-lang="en">Name</span><span data-lang="pt">Nome</span></label>
+          <input type="text" id="f-name"/>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com"/>
+        </div>
+      </div>
+      <div class="form-field">
+        <label><span data-lang="en">Phone</span><span data-lang="pt">Telefone</span></label>
+        <input type="tel" placeholder="+1 (000) 000-0000"/>
+      </div>
+      <div class="form-field">
+        <label><span data-lang="en">Service of Interest</span><span data-lang="pt">Serviço de Interesse</span></label>
+        <select id="svc-select"></select>
+      </div>
+      <div class="form-field">
+        <label><span data-lang="en">How can we help?</span><span data-lang="pt">Como podemos ajudar?</span></label>
+        <textarea id="f-msg"></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submit-btn">
+        <span data-lang="en">Send Message →</span><span data-lang="pt">Enviar Mensagem →</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="font-size:1.5rem">Silicon<span style="color:var(--bg-400)">Minds</span></a>
+      <p data-lang="en">Strategic reputation management for businesses and individuals. Based in Miami, operating globally.</p>
+      <p data-lang="pt">Gestão estratégica de reputação para empresas e profissionais. Sediada em Miami, atuando globalmente.</p>
+    </div>
+    <div class="footer-col">
+      <h5><span data-lang="en">Platform</span><span data-lang="pt">Plataforma</span></h5>
+      <ul>
+        <li><a href="#about"><span data-lang="en">About</span><span data-lang="pt">Sobre</span></a></li>
+        <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a></li>
+        <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que Nós</span></a></li>
+        <li><a href="#partners"><span data-lang="en">Partners</span><span data-lang="pt">Parceiros</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></h5>
+      <ul>
+        <li><a href="tel:+17863840201">+1 786-384-0201</a></li>
+        <li><a href="mailto:team@silicon-minds.com">team@silicon-minds.com</a></li>
+        <li><a href="#contact"><span data-lang="en">Get a Proposal</span><span data-lang="pt">Solicitar Proposta</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>2026 © Silicon Minds · <span data-lang="en">All rights reserved.</span><span data-lang="pt">Todos os direitos reservados.</span></p>
+    <div class="footer-socials">
+      <a href="https://linkedin.com/company/silicon-minds-llc" class="social-btn" target="_blank">in</a>
+      <a href="https://instagram.com/mindssilicon" class="social-btn" target="_blank">ig</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SERVICES = {
+  en: ['Select a service…','Online Reputation Management','SEO Strategy','Crisis Management','PR Services','General Inquiry'],
+  pt: ['Selecione um serviço…','Gestão de Reputação Online','Estratégia de SEO','Gestão de Crises','Assessoria de Imprensa','Consulta Geral']
+};
+const PH = {
+  name: { en: 'Your full name', pt: 'Seu nome completo' },
+  msg:  { en: 'Tell us about your situation…', pt: 'Conte-nos sobre sua situação…' }
+};
+
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
+  // select options
+  const sel = document.getElementById('svc-select');
+  if (sel) { sel.innerHTML = ''; SERVICES[lang].forEach((t,i) => { const o = document.createElement('option'); o.value = i ? t : ''; o.textContent = t; sel.appendChild(o); }); }
+  // placeholders
+  const fn = document.getElementById('f-name'); if(fn) fn.placeholder = PH.name[lang];
+  const fm = document.getElementById('f-msg');  if(fm) fm.placeholder = PH.msg[lang];
+  localStorage.setItem('sm-lang', lang);
+}
+
+// init
+setLang(localStorage.getItem('sm-lang') || 'en');
+
+// scroll fade
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// form
+function handleSubmit(e) {
+  e.preventDefault();
+  const lang = document.body.classList.contains('lang-pt') ? 'pt' : 'en';
+  const msgs = { en: 'Message Sent ✓', pt: 'Mensagem Enviada ✓' };
+  const originals = { en: 'Send Message →', pt: 'Enviar Mensagem →' };
+  const btn = document.getElementById('submit-btn');
+  btn.querySelector('[data-lang="' + lang + '"]').textContent = msgs[lang];
+  btn.style.background = 'var(--bg-300)';
+  setTimeout(() => {
+    btn.querySelector('[data-lang="en"]').textContent = originals.en;
+    btn.querySelector('[data-lang="pt"]').textContent = originals.pt;
+    btn.style.background = '';
+  }, 3000);
+}
+
+// mobile nav close
+document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => document.getElementById('navbar').classList.remove('open')));
+
+/* === Search demo: cycle bad results being removed/hidden === */
+(function(){
+  const list = document.getElementById('searchDemoList');
+  if (!list) return;
+  const originals = Array.from(list.children).map(el => el.outerHTML);
+  let step = 0;
+  function getBads() { return list.querySelectorAll('.search-result.bad:not(.gone)'); }
+  function tick() {
+    const bads = getBads();
+    if (bads.length === 0) {
+      // reset after a pause
+      setTimeout(() => {
+        list.innerHTML = originals.join('');
+        Array.from(list.children).forEach(c => c.classList.add('incoming'));
+        setTimeout(() => Array.from(list.children).forEach(c => c.classList.remove('incoming')), 700);
+        setTimeout(tick, 2200);
+      }, 2400);
+      return;
+    }
+    const target = bads[0];
+    target.classList.add('removing');
+    setTimeout(() => { target.classList.add('gone'); }, 1500);
+    setTimeout(tick, 2800);
+  }
+  setTimeout(tick, 1600);
+})();
+</script>
+</body>
+</html>
