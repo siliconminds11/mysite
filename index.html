@@ -225,6 +225,61 @@
   .social-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(160,160,160,.2); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: .85rem; transition: border-color .2s, background .2s; }
   .social-btn:hover { border-color: var(--bg-400); background: rgba(160,160,160,.1); }
 
+  /* DUAL EXPERTISE SECTION */
+  #dual-expertise { background: var(--bg-900); }
+  .dual-intro { max-width: 680px; }
+  .dual-badge {
+    display: inline-flex; align-items: center; gap: .6rem;
+    background: rgba(61,214,140,.08); border: 1px solid rgba(61,214,140,.3);
+    border-radius: 2rem; padding: .45rem 1.1rem;
+    font-family: 'DM Mono', monospace; font-size: .72rem;
+    color: var(--bg-400); letter-spacing: .1em; text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .dual-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .dual-col {
+    background: var(--bg-800);
+    border: 1px solid rgba(61,214,140,.15);
+    border-radius: 1rem; overflow: hidden;
+  }
+  .dual-col-header {
+    padding: 1rem 1.4rem;
+    display: flex; align-items: center; gap: .7rem;
+    font-family: 'DM Mono', monospace; font-size: .78rem;
+    font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  }
+  .dual-col-header.br { background: var(--bg-400); color: var(--black); }
+  .dual-col-header.intl { background: var(--bg-700); color: var(--bg-400); border-bottom: 1px solid rgba(61,214,140,.2); }
+  .dual-rows { display: flex; flex-direction: column; }
+  .dual-row {
+    padding: .9rem 1.4rem;
+    border-bottom: 1px solid rgba(61,214,140,.07);
+    display: flex; flex-direction: column; gap: .3rem;
+  }
+  .dual-row:last-child { border-bottom: none; }
+  .dual-row-label {
+    font-family: 'DM Mono', monospace; font-size: .68rem;
+    color: var(--bg-400); letter-spacing: .1em; text-transform: uppercase;
+  }
+  .dual-row-text {
+    font-size: .88rem; color: var(--white); line-height: 1.6;
+  }
+  .dual-tagline {
+    margin-top: 3rem; padding: 1.5rem 2rem;
+    background: var(--bg-800);
+    border-left: 3px solid var(--bg-400);
+    border-radius: 0 .6rem .6rem 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 1.05rem;
+    color: var(--white); line-height: 1.65;
+    max-width: 780px;
+  }
+  .dual-tagline em { color: var(--bg-400); font-style: normal; }
+  @media (max-width: 900px) { .dual-grid { grid-template-columns: 1fr; } }
+
   /* ANIMATIONS */
   .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -533,6 +588,90 @@
   </div>
 </section>
 
+<!-- DUAL EXPERTISE -->
+<section id="dual-expertise">
+  <div class="dual-intro fade-up">
+    <span class="section-tag"><span data-lang="en">Our Exclusive Advantage</span><span data-lang="pt">Nosso Diferencial Exclusivo</span></span>
+    <h2 data-lang="en">The only ORM firm that operates in <em>both Googles.</em></h2>
+    <h2 data-lang="pt">A única empresa de reputação que atua nos <em>dois Googles.</em></h2>
+    <p class="section-sub" data-lang="en">Google Brazil and Google International are two distinct ecosystems — different algorithms, content signals, legal frameworks, and cultural dynamics. Most firms know one. We know both.</p>
+    <p class="section-sub" data-lang="pt">O Google Brasil e o Google Internacional são dois ecossistemas distintos — algoritmos, sinais de conteúdo, legislações e dinâmicas culturais diferentes. A maioria das empresas conhece um. Nós conhecemos os dois.</p>
+  </div>
+
+  <div class="dual-grid fade-up">
+
+    <!-- GOOGLE BRASIL -->
+    <div class="dual-col">
+      <div class="dual-col-header br">🇧🇷 &nbsp;Google Brasil</div>
+      <div class="dual-rows">
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">Content</span><span data-lang="pt">Conteúdo</span></span>
+          <span class="dual-row-text" data-lang="en">Production in Portuguese with local tone, high-authority Brazilian portals and niche blogs.</span>
+          <span class="dual-row-text" data-lang="pt">Produção em português com tom local, portais brasileiros de alta autoridade e blogs de nicho.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">PR &amp; Press</span><span data-lang="pt">Assessoria de Imprensa</span></span>
+          <span class="dual-row-text" data-lang="en">UOL, G1, Exame, regional outlets and specialist media with strong indexing on Google BR.</span>
+          <span class="dual-row-text" data-lang="pt">UOL, G1, Exame, veículos regionais e mídias especializadas com forte indexação no Google BR.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">SEO Techniques</span><span data-lang="pt">Técnicas de SEO</span></span>
+          <span class="dual-row-text" data-lang="en">.com.br domains, local citations, Google Business Profile and Brazilian search behavior signals.</span>
+          <span class="dual-row-text" data-lang="pt">Domínios .com.br, citações locais, Google Meu Negócio e sinais de comportamento de busca brasileiros.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">Legal Removals</span><span data-lang="pt">Remoções Legais</span></span>
+          <span class="dual-row-text" data-lang="en">LGPD and Marco Civil da Internet — Brazilian law applied to right-to-be-forgotten requests.</span>
+          <span class="dual-row-text" data-lang="pt">LGPD e Marco Civil da Internet — legislação brasileira aplicada ao direito ao esquecimento digital.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">Algorithm &amp; Culture</span><span data-lang="pt">Algoritmo e Cultura</span></span>
+          <span class="dual-row-text" data-lang="en">Brazilian search behavior, local seasonality and cultural nuances that directly shape reputation perception.</span>
+          <span class="dual-row-text" data-lang="pt">Comportamento de busca brasileiro, sazonalidades locais e nuances culturais que moldam a percepção de reputação.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOOGLE INTERNACIONAL -->
+    <div class="dual-col">
+      <div class="dual-col-header intl">🌎 &nbsp;Google Internacional</div>
+      <div class="dual-rows">
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">Content</span><span data-lang="pt">Conteúdo</span></span>
+          <span class="dual-row-text" data-lang="en">English-language production with global authority tone, placements in Forbes, Reuters and Bloomberg.</span>
+          <span class="dual-row-text" data-lang="pt">Produção em inglês com tom de autoridade global, publicações em Forbes, Reuters e Bloomberg.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">PR &amp; Press</span><span data-lang="pt">Assessoria de Imprensa</span></span>
+          <span class="dual-row-text" data-lang="en">PR Newswire, Business Wire, American and European media with high Domain Authority scores.</span>
+          <span class="dual-row-text" data-lang="pt">PR Newswire, Business Wire, mídia americana e europeia com alto Domain Authority.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">SEO Techniques</span><span data-lang="pt">Técnicas de SEO</span></span>
+          <span class="dual-row-text" data-lang="en">International backlinks, global domain authority building and multilingual site architecture.</span>
+          <span class="dual-row-text" data-lang="pt">Backlinks internacionais, autoridade de domínio global e arquitetura multilíngue de sites.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">Legal Removals</span><span data-lang="pt">Remoções Legais</span></span>
+          <span class="dual-row-text" data-lang="en">DMCA (USA), GDPR (Europe) and CCPA (California) for effective cross-border content removals.</span>
+          <span class="dual-row-text" data-lang="pt">DMCA (EUA), GDPR (Europa) e CCPA (Califórnia) para remoções de conteúdo cross-border.</span>
+        </div>
+        <div class="dual-row">
+          <span class="dual-row-label"><span data-lang="en">Algorithm &amp; Culture</span><span data-lang="pt">Algoritmo e Cultura</span></span>
+          <span class="dual-row-text" data-lang="en">Global ranking logic, E-E-A-T signals and international authority markers that drive search dominance.</span>
+          <span class="dual-row-text" data-lang="pt">Lógica de ranqueamento global, sinais E-E-A-T e marcadores de autoridade internacional.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dual-tagline fade-up">
+    <span data-lang="en">"A company built in Miami with deep Brazilian roots — giving us the unique ability to protect and build your reputation wherever your audience searches for you: <em>Brazil, the US, or both.</em>"</span>
+    <span data-lang="pt">"Uma empresa construída em Miami com raízes profundas no Brasil — o que nos dá a capacidade única de proteger e construir sua reputação onde quer que seu público te busque: <em>no Brasil, nos EUA, ou nos dois.</em>"</span>
+  </div>
+</section>
+
 <!-- BAND -->
 <div class="band fade-up">
   <div class="band-text">
@@ -621,6 +760,7 @@
         <li><a href="#about"><span data-lang="en">About</span><span data-lang="pt">Sobre</span></a></li>
         <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a></li>
         <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que Nós</span></a></li>
+        <li><a href="#dual-expertise"><span data-lang="en">Our Edge</span><span data-lang="pt">Diferencial</span></a></li>
         <li><a href="#partners"><span data-lang="en">Partners</span><span data-lang="pt">Parceiros</span></a></li>
       </ul>
     </div>
