@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="0"/>
-<title>Silicon Minds Ã¢ÂÂ Online Reputation Management | Miami</title>
+<title>Silicon Minds — Online Reputation Management | Miami</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -185,7 +185,7 @@
   .band-text h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; }
   .band-text p { color: rgba(255,255,255,.7); margin-top: .4rem; font-size: .95rem; }
   .band-badge { display: flex; align-items: center; gap: .6rem; background: rgba(0,0,0,.2); border: 1px solid rgba(255,255,255,.15); border-radius: 2rem; padding: .8rem 1.8rem; font-size: .85rem; font-weight: 600; white-space: nowrap; }
-  .band-badge::before { content: 'Ã°ÂÂÂ'; font-size: 1.1rem; }
+  .band-badge::before { content: '🔒'; font-size: 1.1rem; }
 
   /* PARTNERS */
   #partners { background: var(--black); }
@@ -305,16 +305,14 @@
     .band { flex-direction: column; text-align: center; }
   }
   /* === Search Demo Widget === */
-  .search-demo {
-    position: absolute; top: 50%; right: 5%; transform: translateY(-50%);
-    width: min(600px, 44vw); z-index: 3;
-    background: rgba(6,18,10,0.88);
-    border: 1px solid rgba(61,214,140,0.28);
-    border-radius: 18px; padding: 24px 24px 12px;
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.65), 0 0 80px rgba(61,214,140,0.15), inset 0 1px 0 rgba(61,214,140,0.12);
-    font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  /* ORBITAL HERO */
+  #orbital-hero {
+    position: absolute; top: 38%; right: 14%; transform: translateY(-50%);
+    width: min(560px, 44vw); height: min(560px, 44vw);
+    z-index: 3;
   }
+  .ow { position: absolute; font-family: -apple-system, sans-serif; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; pointer-events: none; transform: translate(-50%,-50%); }
+  @media (max-width: 1080px) { #orbital-hero { display: none; } }
   /* browser chrome dots */
   .search-demo-chrome { display: flex; align-items: center; gap: 7px; margin-bottom: 16px; }
   .chrome-dot { width: 11px; height: 11px; border-radius: 50%; }
@@ -363,7 +361,7 @@
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
   @media (max-width: 1080px) { .search-demo { display: none; } }
 
-  /* === Service Modals Ã¢ÂÂ CSS :target (zero JavaScript required) === */
+  /* === Service Modals — CSS :target (zero JavaScript required) === */
   .svc-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3,13,6,0.88); z-index: 10000; overflow-y: auto; }
   .svc-modal:target { display: block; }
   .svc-modal-inner { min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem; }
@@ -376,18 +374,9 @@
   .svc-modal-body { font-size: .92rem; color: #6b9e7a; line-height: 1.8; margin-bottom: 1.4rem; }
   .svc-modal-list { list-style: none; padding: 0; margin: 0 0 1.8rem; display: flex; flex-direction: column; gap: .7rem; }
   .svc-modal-list li { font-size: .88rem; color: #7ee8b0; display: flex; gap: .8rem; }
-  .svc-modal-list li::before { content: 'Ã¢ÂÂ'; color: #3dd68c; flex-shrink: 0; }
+  .svc-modal-list li::before { content: '✓'; color: #3dd68c; flex-shrink: 0; }
   .svc-modal-cta { display: inline-block; background: #3dd68c; color: #030d06; border-radius: 2rem; padding: .85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 700; text-decoration: none; }
   .svc-modal-cta:hover { background: #a8ffcc; }
-
-  /* ORBITAL HERO */
-  #orbital-hero {
-    position: absolute; top: 38%; right: 14%; transform: translateY(-50%);
-    width: min(560px, 44vw); height: min(560px, 44vw);
-    z-index: 3;
-  }
-  .ow { position: absolute; font-family: -apple-system, sans-serif; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; pointer-events: none; transform: translate(-50%,-50%); }
-  @media (max-width: 1080px) { #orbital-hero { display: none; } }
 </style>
 </head>
 <body class="lang-en">
@@ -397,8 +386,8 @@
   <a href="#" class="nav-logo">Silicon<span>Minds</span></a>
   <ul class="nav-links">
     <li><a href="#about"><span data-lang="en">About</span><span data-lang="pt">Sobre</span></a></li>
-    <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">ServiÃÂ§os</span></a></li>
-    <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que NÃÂ³s</span></a></li>
+    <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a></li>
+    <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que Nós</span></a></li>
     <li><a href="#dual-expertise"><span data-lang="en">Our Edge</span><span data-lang="pt">Diferencial</span></a></li>
     <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></a></li>
   </ul>
@@ -407,7 +396,7 @@
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('pt')">PT</button>
     </div>
-    <a href="#contact" class="nav-cta"><span data-lang="en">Get My Proposal Ã¢ÂÂ</span><span data-lang="pt">Solicitar Proposta Ã¢ÂÂ</span></a>
+    <a href="#contact" class="nav-cta"><span data-lang="en">Get My Proposal →</span><span data-lang="pt">Solicitar Proposta →</span></a>
     <div class="hamburger" onclick="document.getElementById('navbar').classList.toggle('open')"><span></span><span></span><span></span></div>
   </div>
 </nav>
@@ -417,55 +406,41 @@
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
   <div id="orbital-hero" aria-hidden="true">
-    <svg viewBox="0 0 310 310" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;pointer-events:none">
-      <defs>
-        <radialGradient id="orb-ga" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#3dbc72" stop-opacity="0.18"/>
-          <stop offset="100%" stop-color="#060e09" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="orb-gc" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#c8ffe0"/>
-          <stop offset="100%" stop-color="#3dbc72"/>
-        </radialGradient>
-      </defs>
-      <circle cx="155" cy="155" r="152" fill="url(#orb-ga)"/>
-      <ellipse cx="155" cy="155" rx="50" ry="29" fill="none" stroke="#1a5c35" stroke-width="0.7" stroke-opacity="0.55" transform="rotate(-20 155 155)"/>
-      <ellipse cx="155" cy="155" rx="78" ry="44" fill="none" stroke="#226640" stroke-width="0.6" stroke-opacity="0.45" transform="rotate(15 155 155)"/>
-      <ellipse cx="155" cy="155" rx="105" ry="58" fill="none" stroke="#2d9455" stroke-width="0.55" stroke-opacity="0.38" transform="rotate(-12 155 155)"/>
-      <ellipse cx="155" cy="155" rx="130" ry="48" fill="none" stroke="#3dbc72" stroke-width="0.5" stroke-opacity="0.28" transform="rotate(22 155 155)"/>
-      <ellipse cx="155" cy="155" rx="148" ry="38" fill="none" stroke="#5de09a" stroke-width="0.4" stroke-opacity="0.18" transform="rotate(-8 155 155)"/>
-      <circle cx="155" cy="155" r="26" fill="#060e09" stroke="#1a5c35" stroke-width="1"/>
-      <circle cx="155" cy="155" r="18" fill="#060e09" stroke="#3dbc72" stroke-width="0.7" stroke-opacity="0.55"/>
-      <circle cx="155" cy="155" r="11" fill="url(#orb-gc)">
-        <animate attributeName="r" values="11;13;11" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="fill-opacity" values="1;0.75;1" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="155" cy="155" r="11" fill="none" stroke="#a8ffd0" stroke-width="0.7">
-        <animate attributeName="r" values="11;30;11" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      
-      
-      
-    </svg>
-  </div>
+      <svg viewBox="0 0 310 310" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;pointer-events:none">
+        <defs>
+          <radialGradient id="orb-ga" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3dbc72" stop-opacity="0.18"/><stop offset="100%" stop-color="#060e09" stop-opacity="0"/></radialGradient>
+          <radialGradient id="orb-gc" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c8ffe0"/><stop offset="100%" stop-color="#3dbc72"/></radialGradient>
+        </defs>
+        <circle cx="155" cy="155" r="152" fill="url(#orb-ga)"/>
+        <ellipse cx="155" cy="155" rx="50" ry="29" fill="none" stroke="#1a5c35" stroke-width="0.7" stroke-opacity="0.55" transform="rotate(-20 155 155)"/>
+        <ellipse cx="155" cy="155" rx="78" ry="44" fill="none" stroke="#226640" stroke-width="0.6" stroke-opacity="0.45" transform="rotate(15 155 155)"/>
+        <ellipse cx="155" cy="155" rx="105" ry="58" fill="none" stroke="#2d9455" stroke-width="0.55" stroke-opacity="0.38" transform="rotate(-12 155 155)"/>
+        <ellipse cx="155" cy="155" rx="130" ry="48" fill="none" stroke="#3dbc72" stroke-width="0.5" stroke-opacity="0.28" transform="rotate(22 155 155)"/>
+        <ellipse cx="155" cy="155" rx="148" ry="38" fill="none" stroke="#5de09a" stroke-width="0.4" stroke-opacity="0.18" transform="rotate(-8 155 155)"/>
+        <circle cx="155" cy="155" r="26" fill="#060e09" stroke="#1a5c35" stroke-width="1"/>
+        <circle cx="155" cy="155" r="18" fill="#060e09" stroke="#3dbc72" stroke-width="0.7" stroke-opacity="0.55"/>
+        <circle cx="155" cy="155" r="11" fill="url(#orb-gc)"><animate attributeName="r" values="11;13;11" dur="3s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="1;0.75;1" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="155" cy="155" r="11" fill="none" stroke="#a8ffd0" stroke-width="0.7"><animate attributeName="r" values="11;30;11" dur="3s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/></circle>
+      </svg>
+    </div>
   <div class="hero-left">
-  <p class="hero-tag"><span data-lang="en">Miami ÃÂ· Digital Reputation Experts ÃÂ· Est. 2016</span><span data-lang="pt">Miami ÃÂ· Especialistas em ReputaÃÂ§ÃÂ£o Digital ÃÂ· Desde 2016</span></p>
+  <p class="hero-tag"><span data-lang="en">Miami · Digital Reputation Experts · Est. 2016</span><span data-lang="pt">Miami · Especialistas em Reputação Digital · Desde 2016</span></p>
   <h1 data-lang="en">Your name is your most<br><em>valuable asset.</em></h1>
-  <h1 data-lang="pt">Seu nome Ã© seu bem mais<br><em>valioso.</em></h1>
+        <h1 data-lang="pt" style="display:none">Seu nome &eacute; seu bem mais valioso.<br><em>Cuide da sua reputa��o.</em></h1>
+  <h1 data-lang="pt">Controle o Que a Internet<br><em>Diz Sobre Você.</em></h1>
   <p class="hero-sub" data-lang="en">Silicon Minds builds and protects the online reputation businesses and individuals rely on to win clients, close deals, and grow with confidence.</p>
-  <p class="hero-sub" data-lang="pt">A Silicon Minds constrÃÂ³i e protege a reputaÃÂ§ÃÂ£o online que empresas e profissionais precisam para conquistar clientes, fechar negÃÂ³cios e crescer com seguranÃÂ§a.</p>
+  <p class="hero-sub" data-lang="pt">A Silicon Minds constrói e protege a reputação online que empresas e profissionais precisam para conquistar clientes, fechar negócios e crescer com segurança.</p>
   <div class="hero-ctas">
-    <a href="#contact" class="btn-primary"><span data-lang="en">Request a Confidential Proposal &rarr;</span><span data-lang="pt">Solicitar Proposta GrÃÂ¡tis Ã¢ÂÂ</span></a>
-    <a href="#services" class="btn-ghost"><span data-lang="en">Explore Services</span><span data-lang="pt">Ver ServiÃÂ§os</span></a>
+    <a href="#contact" class="btn-primary"><span data-lang="en">Request a Confidential Proposal &rarr; →</span><span data-lang="pt">Solicitar Proposta Grátis →</span></a>
+    <a href="#services" class="btn-ghost"><span data-lang="en">Explore Services</span><span data-lang="pt">Ver Serviços</span></a>
   </div>
   </div><!-- /.hero-left -->
   <div class="ticker-wrap">
     <div class="ticker" data-lang="en">
-      <span class="ticker-item">Online Reputation Management</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">SEO Strategy</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Crisis Management</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">PR Services</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Brand Protection</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Google Search Repair</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Content Marketing</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Online Reputation Management</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">SEO Strategy</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Crisis Management</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">PR Services</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Brand Protection</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Google Search Repair</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Content Marketing</span><span class="ticker-item">ÃÂ·</span>
+      <span class="ticker-item">Online Reputation Management</span><span class="ticker-item">·</span><span class="ticker-item">SEO Strategy</span><span class="ticker-item">·</span><span class="ticker-item">Crisis Management</span><span class="ticker-item">·</span><span class="ticker-item">PR Services</span><span class="ticker-item">·</span><span class="ticker-item">Brand Protection</span><span class="ticker-item">·</span><span class="ticker-item">Google Search Repair</span><span class="ticker-item">·</span><span class="ticker-item">Content Marketing</span><span class="ticker-item">·</span><span class="ticker-item">Online Reputation Management</span><span class="ticker-item">·</span><span class="ticker-item">SEO Strategy</span><span class="ticker-item">·</span><span class="ticker-item">Crisis Management</span><span class="ticker-item">·</span><span class="ticker-item">PR Services</span><span class="ticker-item">·</span><span class="ticker-item">Brand Protection</span><span class="ticker-item">·</span><span class="ticker-item">Google Search Repair</span><span class="ticker-item">·</span><span class="ticker-item">Content Marketing</span><span class="ticker-item">·</span>
     </div>
     <div class="ticker" data-lang="pt">
-      <span class="ticker-item">GestÃÂ£o de ReputaÃÂ§ÃÂ£o Online</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">EstratÃÂ©gia de SEO</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">GestÃÂ£o de Crises</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Assessoria de Imprensa</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">ProteÃÂ§ÃÂ£o de Marca</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Reparo no Google</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Marketing de ConteÃÂºdo</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">GestÃÂ£o de ReputaÃÂ§ÃÂ£o Online</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">EstratÃÂ©gia de SEO</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">GestÃÂ£o de Crises</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Assessoria de Imprensa</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">ProteÃÂ§ÃÂ£o de Marca</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Reparo no Google</span><span class="ticker-item">ÃÂ·</span><span class="ticker-item">Marketing de ConteÃÂºdo</span><span class="ticker-item">ÃÂ·</span>
+      <span class="ticker-item">Gestão de Reputação Online</span><span class="ticker-item">·</span><span class="ticker-item">Estratégia de SEO</span><span class="ticker-item">·</span><span class="ticker-item">Gestão de Crises</span><span class="ticker-item">·</span><span class="ticker-item">Assessoria de Imprensa</span><span class="ticker-item">·</span><span class="ticker-item">Proteção de Marca</span><span class="ticker-item">·</span><span class="ticker-item">Reparo no Google</span><span class="ticker-item">·</span><span class="ticker-item">Marketing de Conteúdo</span><span class="ticker-item">·</span><span class="ticker-item">Gestão de Reputação Online</span><span class="ticker-item">·</span><span class="ticker-item">Estratégia de SEO</span><span class="ticker-item">·</span><span class="ticker-item">Gestão de Crises</span><span class="ticker-item">·</span><span class="ticker-item">Assessoria de Imprensa</span><span class="ticker-item">·</span><span class="ticker-item">Proteção de Marca</span><span class="ticker-item">·</span><span class="ticker-item">Reparo no Google</span><span class="ticker-item">·</span><span class="ticker-item">Marketing de Conteúdo</span><span class="ticker-item">·</span>
     </div>
   </div>
 </section>
@@ -476,19 +451,19 @@
     <div>
       <span class="section-tag"><span data-lang="en">About Silicon Minds</span><span data-lang="pt">Sobre a Silicon Minds</span></span>
       <h2 data-lang="en">A strategic reputation platform for businesses &amp; <em>individuals.</em></h2>
-      <h2 data-lang="pt">Uma plataforma estratÃÂ©gica de reputaÃÂ§ÃÂ£o para empresas &amp; <em>profissionais.</em></h2>
-      <p class="section-sub" data-lang="en">We live in an era where your Google results are your first handshake. Silicon Minds actively manages, repairs, and elevates your digital presence Ã¢ÂÂ so opportunity finds you first.</p>
-      <p class="section-sub" data-lang="pt">Vivemos numa era em que seus resultados no Google sÃÂ£o o primeiro aperto de mÃÂ£o. A Silicon Minds gerencia, repara e eleva sua presenÃÂ§a digital Ã¢ÂÂ para que as oportunidades cheguem atÃÂ© vocÃÂª primeiro.</p>
-      <p class="about-body" style="margin-top:1.8rem" data-lang="en">Reputation management is no longer optional Ã¢ÂÂ it's the foundation of modern business. Whether you're a company facing damaging search results or a professional building your personal brand, we bring cutting-edge tools, AI-powered monitoring, and expert human strategy to every engagement.</p>
-      <p class="about-body" data-lang="pt">GestÃÂ£o de reputaÃÂ§ÃÂ£o nÃÂ£o ÃÂ© mais opcional Ã¢ÂÂ ÃÂ© a base do negÃÂ³cio moderno. Seja uma empresa com resultados de busca prejudiciais ou um profissional construindo sua marca pessoal, trazemos ferramentas de ponta, monitoramento com IA e estratÃÂ©gia humana especializada a cada projeto.</p>
+      <h2 data-lang="pt">Uma plataforma estratégica de reputação para empresas &amp; <em>profissionais.</em></h2>
+      <p class="section-sub" data-lang="en">We live in an era where your Google results are your first handshake. Silicon Minds actively manages, repairs, and elevates your digital presence — so opportunity finds you first.</p>
+      <p class="section-sub" data-lang="pt">Vivemos numa era em que seus resultados no Google são o primeiro aperto de mão. A Silicon Minds gerencia, repara e eleva sua presença digital — para que as oportunidades cheguem até você primeiro.</p>
+      <p class="about-body" style="margin-top:1.8rem" data-lang="en">Reputation management is no longer optional — it's the foundation of modern business. Whether you're a company facing damaging search results or a professional building your personal brand, we bring cutting-edge tools, AI-powered monitoring, and expert human strategy to every engagement.</p>
+      <p class="about-body" data-lang="pt">Gestão de reputação não é mais opcional — é a base do negócio moderno. Seja uma empresa com resultados de busca prejudiciais ou um profissional construindo sua marca pessoal, trazemos ferramentas de ponta, monitoramento com IA e estratégia humana especializada a cada projeto.</p>
       <p class="about-body" style="margin-top:1.2rem" data-lang="en">Based in Miami. Operating globally.</p>
       <p class="about-body" style="margin-top:1.2rem" data-lang="pt">Sediada em Miami. Atuando globalmente.</p>
       <div class="cities">
-        <div class="city-badge">Ã°ÂÂÂºÃ°ÂÂÂ¸ Miami</div>
-        <div class="city-badge">Ã°ÂÂÂ New York</div>
-        <div class="city-badge">Ã°ÂÂÂ London</div>
-        <div class="city-badge">Ã°ÂÂÂ Dubai</div>
-        <div class="city-badge">Ã°ÂÂÂ SÃÂ£o Paulo</div>
+        <div class="city-badge">🇺🇸 Miami</div>
+        <div class="city-badge">🌎 New York</div>
+        <div class="city-badge">🌍 London</div>
+        <div class="city-badge">🌏 Dubai</div>
+        <div class="city-badge">🌎 São Paulo</div>
       </div>
     </div>
     <div class="about-stats">
@@ -498,18 +473,18 @@
         <div class="stat-box">
           <span class="stat-num">500+</span>
           <span class="stat-label"><span data-lang="en">Clients Protected</span><span data-lang="pt">Clientes Protegidos</span></span>
-          <span class="stat-sub"><span data-lang="en">15+ countries</span><span data-lang="pt">15+ paÃÂ­ses</span></span>
+          <span class="stat-sub"><span data-lang="en">15+ countries</span><span data-lang="pt">15+ países</span></span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-box">
           <span class="stat-num">98%</span>
-          <span class="stat-label"><span data-lang="en">Client Satisfaction</span><span data-lang="pt">SatisfaÃÂ§ÃÂ£o dos Clientes</span></span>
-          <span class="stat-sub"><span data-lang="en">Post-project rating</span><span data-lang="pt">AvaliaÃÂ§ÃÂ£o pÃÂ³s-projeto</span></span>
+          <span class="stat-label"><span data-lang="en">Client Satisfaction</span><span data-lang="pt">Satisfação dos Clientes</span></span>
+          <span class="stat-sub"><span data-lang="en">Post-project rating</span><span data-lang="pt">Avaliação pós-projeto</span></span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-box">
           <span class="stat-num">10+</span>
-          <span class="stat-label"><span data-lang="en">Years of Experience</span><span data-lang="pt">Anos de ExperiÃÂªncia</span></span>
+          <span class="stat-label"><span data-lang="en">Years of Experience</span><span data-lang="pt">Anos de Experiência</span></span>
           <span class="stat-sub"><span data-lang="en">Since 2016</span><span data-lang="pt">Desde 2016</span></span>
         </div>
       </div>
@@ -522,8 +497,8 @@
         <div class="stat-divider"></div>
         <div class="stat-box">
           <span class="stat-num">15+</span>
-          <span class="stat-label"><span data-lang="en">Countries</span><span data-lang="pt">PaÃÂ­ses</span></span>
-          <span class="stat-sub"><span data-lang="en">Global reach</span><span data-lang="pt">AtuaÃÂ§ÃÂ£o global</span></span>
+          <span class="stat-label"><span data-lang="en">Countries</span><span data-lang="pt">Países</span></span>
+          <span class="stat-sub"><span data-lang="en">Global reach</span><span data-lang="pt">Atuação global</span></span>
         </div>
       </div>
       </div>
@@ -533,40 +508,40 @@
 
 <!-- SERVICES -->
 <section id="services">
-  <span class="section-tag"><span data-lang="en">Our Services</span><span data-lang="pt">Nossos ServiÃÂ§os</span></span>
+  <span class="section-tag"><span data-lang="en">Our Services</span><span data-lang="pt">Nossos Serviços</span></span>
   <h2 data-lang="en">Strategic access for your <em>digital presence.</em></h2>
-  <h2 data-lang="pt">Acesso estratÃÂ©gico para sua <em>presenÃÂ§a digital.</em></h2>
-  <p class="section-sub" data-lang="en">From reputation repair to search domination Ã¢ÂÂ our full suite is designed to make your online presence work for you, not against you.</p>
-  <p class="section-sub" data-lang="pt">Da reparaÃÂ§ÃÂ£o de reputaÃÂ§ÃÂ£o ao domÃÂ­nio nos buscadores Ã¢ÂÂ nossa soluÃÂ§ÃÂ£o completa faz sua presenÃÂ§a online trabalhar a seu favor.</p>
+  <h2 data-lang="pt">Acesso estratégico para sua <em>presença digital.</em></h2>
+  <p class="section-sub" data-lang="en">From reputation repair to search domination — our full suite is designed to make your online presence work for you, not against you.</p>
+  <p class="section-sub" data-lang="pt">Da reparação de reputação ao domínio nos buscadores — nossa solução completa faz sua presença online trabalhar a seu favor.</p>
 
   <div class="services-grid fade-up">
     <div class="service-card">
-      <span class="service-icon">Ã°ÂÂÂ¡Ã¯Â¸Â</span>
-      <h3><span data-lang="en">Online Reputation Management</span><span data-lang="pt">GestÃÂ£o de ReputaÃÂ§ÃÂ£o Online</span></h3>
+      <span class="service-icon">🛡️</span>
+      <h3><span data-lang="en">Online Reputation Management</span><span data-lang="pt">Gestão de Reputação Online</span></h3>
       <p data-lang="en">Suppress negative content, amplify positive results, and build a Google presence that earns trust at first click.</p>
-      <p data-lang="pt">Suprima conteÃÂºdos negativos, amplifique resultados positivos e construa uma presenÃÂ§a no Google que gera confianÃÂ§a desde o primeiro clique.</p>
-      <a href="#modal-orm" class="service-link"><span data-lang="en">Learn More Ã¢ÂÂ</span><span data-lang="pt">Saiba Mais Ã¢ÂÂ</span></a>
+      <p data-lang="pt">Suprima conteúdos negativos, amplifique resultados positivos e construa uma presença no Google que gera confiança desde o primeiro clique.</p>
+      <a href="#modal-orm" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
     </div>
     <div class="service-card">
-      <span class="service-icon">Ã°ÂÂÂ</span>
-      <h3><span data-lang="en">SEO Strategy</span><span data-lang="pt">EstratÃÂ©gia de SEO</span></h3>
-      <p data-lang="en">We engineer search visibility through proven technical SEO, content strategy, and link authority Ã¢ÂÂ driving qualified traffic that converts.</p>
-      <p data-lang="pt">Criamos visibilidade nos buscadores com SEO tÃÂ©cnico comprovado, estratÃÂ©gia de conteÃÂºdo e autoridade de links Ã¢ÂÂ gerando trÃÂ¡fego qualificado que converte.</p>
-      <a href="#modal-seo" class="service-link"><span data-lang="en">Learn More Ã¢ÂÂ</span><span data-lang="pt">Saiba Mais Ã¢ÂÂ</span></a>
+      <span class="service-icon">🔍</span>
+      <h3><span data-lang="en">SEO Strategy</span><span data-lang="pt">Estratégia de SEO</span></h3>
+      <p data-lang="en">We engineer search visibility through proven technical SEO, content strategy, and link authority — driving qualified traffic that converts.</p>
+      <p data-lang="pt">Criamos visibilidade nos buscadores com SEO técnico comprovado, estratégia de conteúdo e autoridade de links — gerando tráfego qualificado que converte.</p>
+      <a href="#modal-seo" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
     </div>
     <div class="service-card">
-      <span class="service-icon">Ã¢ÂÂ¡</span>
-      <h3><span data-lang="en">Crisis Management</span><span data-lang="pt">GestÃÂ£o de Crises</span></h3>
+      <span class="service-icon">⚡</span>
+      <h3><span data-lang="en">Crisis Management</span><span data-lang="pt">Gestão de Crises</span></h3>
       <p data-lang="en">When it matters most, we move fast. Our crisis response framework safeguards your reputation and guides your brand through the storm.</p>
-      <p data-lang="pt">Quando mais importa, agimos rÃÂ¡pido. Nossa estrutura de resposta a crises protege sua reputaÃÂ§ÃÂ£o e guia sua marca pela turbulÃÂªncia.</p>
-      <a href="#modal-crise" class="service-link"><span data-lang="en">Learn More Ã¢ÂÂ</span><span data-lang="pt">Saiba Mais Ã¢ÂÂ</span></a>
+      <p data-lang="pt">Quando mais importa, agimos rápido. Nossa estrutura de resposta a crises protege sua reputação e guia sua marca pela turbulência.</p>
+      <a href="#modal-crise" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
     </div>
     <div class="service-card">
-      <span class="service-icon">Ã°ÂÂÂ£</span>
+      <span class="service-icon">📣</span>
       <h3><span data-lang="en">PR Services</span><span data-lang="pt">Assessoria de Imprensa</span></h3>
       <p data-lang="en">Strategic communication plans and storytelling that earns coverage in the publications your audience trusts and reads.</p>
-      <p data-lang="pt">Planos de comunicaÃÂ§ÃÂ£o estratÃÂ©gicos e narrativas que garantem cobertura nas publicaÃÂ§ÃÂµes em que seu pÃÂºblico confia e lÃÂª.</p>
-      <a href="#modal-pr" class="service-link"><span data-lang="en">Learn More Ã¢ÂÂ</span><span data-lang="pt">Saiba Mais Ã¢ÂÂ</span></a>
+      <p data-lang="pt">Planos de comunicação estratégicos e narrativas que garantem cobertura nas publicações em que seu público confia e lê.</p>
+      <a href="#modal-pr" class="service-link"><span data-lang="en">Learn More →</span><span data-lang="pt">Saiba Mais →</span></a>
     </div>
   </div>
 </section>
@@ -575,48 +550,48 @@
 <section id="why">
   <span class="section-tag"><span data-lang="en">Why Silicon Minds</span><span data-lang="pt">Por Que a Silicon Minds</span></span>
   <h2 data-lang="en">We do the heavy lifting while you <em>run your business.</em></h2>
-  <h2 data-lang="pt">Fazemos o trabalho pesado enquanto vocÃÂª <em>cuida do seu negÃÂ³cio.</em></h2>
+  <h2 data-lang="pt">Fazemos o trabalho pesado enquanto você <em>cuida do seu negócio.</em></h2>
 
   <div class="why-grid fade-up">
     <div>
       <div class="why-item"><div class="why-dot"></div><div>
         <h4><span data-lang="en">AI-Powered Monitoring</span><span data-lang="pt">Monitoramento com IA</span></h4>
         <p data-lang="en">Proprietary robots scan the web 24/7 so you're never caught off-guard by damaging content.</p>
-        <p data-lang="pt">RobÃÂ´s prÃÂ³prios varrem a web 24/7 para que vocÃÂª nunca seja surpreendido por conteÃÂºdo prejudicial.</p>
+        <p data-lang="pt">Robôs próprios varrem a web 24/7 para que você nunca seja surpreendido por conteúdo prejudicial.</p>
       </div></div>
       <div class="why-item"><div class="why-dot"></div><div>
         <h4><span data-lang="en">100% Confidential</span><span data-lang="pt">100% Confidencial</span></h4>
-        <p data-lang="en">Every engagement operates under a strict NDA. Your strategy, your results Ã¢ÂÂ completely discreet.</p>
-        <p data-lang="pt">Cada projeto opera sob NDA rigoroso. Sua estratÃÂ©gia, seus resultados Ã¢ÂÂ total discriÃÂ§ÃÂ£o.</p>
+        <p data-lang="en">Every engagement operates under a strict NDA. Your strategy, your results — completely discreet.</p>
+        <p data-lang="pt">Cada projeto opera sob NDA rigoroso. Sua estratégia, seus resultados — total discrição.</p>
       </div></div>
       <div class="why-item"><div class="why-dot"></div><div>
-        <h4><span data-lang="en">Elite Writing Team</span><span data-lang="pt">Equipe de RedaÃÂ§ÃÂ£o de Elite</span></h4>
+        <h4><span data-lang="en">Elite Writing Team</span><span data-lang="pt">Equipe de Redação de Elite</span></h4>
         <p data-lang="en">Technical writers, editors, and content strategists who craft narratives that rank and persuade.</p>
-        <p data-lang="pt">Redatores tÃÂ©cnicos, editores e estrategistas de conteÃÂºdo que criam narrativas que rankeiam e convencem.</p>
+        <p data-lang="pt">Redatores técnicos, editores e estrategistas de conteúdo que criam narrativas que rankeiam e convencem.</p>
       </div></div>
       <div class="why-item"><div class="why-dot"></div><div>
-        <h4><span data-lang="en">Full-Funnel Reporting</span><span data-lang="pt">RelatÃÂ³rios Completos</span></h4>
+        <h4><span data-lang="en">Full-Funnel Reporting</span><span data-lang="pt">Relatórios Completos</span></h4>
         <p data-lang="en">Transparent, metrics-driven reports so you always know exactly what's working and why.</p>
-        <p data-lang="pt">RelatÃÂ³rios transparentes orientados por mÃÂ©tricas para que vocÃÂª sempre saiba o que funciona e por quÃÂª.</p>
+        <p data-lang="pt">Relatórios transparentes orientados por métricas para que você sempre saiba o que funciona e por quê.</p>
       </div></div>
       <div class="why-item"><div class="why-dot"></div><div>
-        <h4><span data-lang="en">Speak to a Marketer, Not a Salesperson</span><span data-lang="pt">Fale com um Especialista, NÃÂ£o um Vendedor</span></h4>
-        <p data-lang="en">Every conversation is a real strategy session Ã¢ÂÂ no pitches, just honest advice from specialists.</p>
-        <p data-lang="pt">Cada conversa ÃÂ© uma sessÃÂ£o real de estratÃÂ©gia Ã¢ÂÂ sem script de vendas, apenas conselhos honestos.</p>
+        <h4><span data-lang="en">Speak to a Marketer, Not a Salesperson</span><span data-lang="pt">Fale com um Especialista, Não um Vendedor</span></h4>
+        <p data-lang="en">Every conversation is a real strategy session — no pitches, just honest advice from specialists.</p>
+        <p data-lang="pt">Cada conversa é uma sessão real de estratégia — sem script de vendas, apenas conselhos honestos.</p>
       </div></div>
     </div>
 
     <div class="why-highlight">
-      <p class="why-quote" data-lang="en">"Reputation management is no longer a 'nice to have' Ã¢ÂÂ it has become essential for both business and individual success."</p>
-      <p class="why-quote" data-lang="pt">"GestÃÂ£o de reputaÃÂ§ÃÂ£o nÃÂ£o ÃÂ© mais um diferencial Ã¢ÂÂ tornou-se essencial para o sucesso de empresas e indivÃÂ­duos."</p>
-      <p class="why-quote-author">Ã¢ÂÂ Silicon Minds ÃÂ· Miami, FL</p>
+      <p class="why-quote" data-lang="en">"Reputation management is no longer a 'nice to have' — it has become essential for both business and individual success."</p>
+      <p class="why-quote" data-lang="pt">"Gestão de reputação não é mais um diferencial — tornou-se essencial para o sucesso de empresas e indivíduos."</p>
+      <p class="why-quote-author">— Silicon Minds · Miami, FL</p>
       <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(160,160,160,.2)">
         <p style="font-size:.82rem;color:var(--gray-dim);margin-bottom:1.4rem;text-transform:uppercase;letter-spacing:.1em;font-family:'DM Mono',monospace"><span data-lang="en">Our Goals</span><span data-lang="pt">Nossos Objetivos</span></p>
         <ul class="goals-list">
-          <li><span class="check">Ã¢ÂÂ</span><span data-lang="en">Generate positive reviews &amp; manage reputation</span><span data-lang="pt">Gerar avaliaÃÂ§ÃÂµes positivas e gerenciar a reputaÃÂ§ÃÂ£o</span></li>
-          <li><span class="check">Ã¢ÂÂ</span><span data-lang="en">Improve local ranking in online searches</span><span data-lang="pt">Melhorar o ranking local nas buscas online</span></li>
-          <li><span class="check">Ã¢ÂÂ</span><span data-lang="en">Reach new customers and gain leads</span><span data-lang="pt">AlcanÃÂ§ar novos clientes e gerar leads</span></li>
-          <li><span class="check">Ã¢ÂÂ</span><span data-lang="en">Control crises of all kinds</span><span data-lang="pt">Controlar crises de qualquer natureza</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Generate positive reviews &amp; manage reputation</span><span data-lang="pt">Gerar avaliações positivas e gerenciar a reputação</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Improve local ranking in online searches</span><span data-lang="pt">Melhorar o ranking local nas buscas online</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Reach new customers and gain leads</span><span data-lang="pt">Alcançar novos clientes e gerar leads</span></li>
+          <li><span class="check">✓</span><span data-lang="en">Control crises of all kinds</span><span data-lang="pt">Controlar crises de qualquer natureza</span></li>
         </ul>
       </div>
     </div>
@@ -628,73 +603,73 @@
   <div class="dual-intro fade-up">
     <span class="section-tag"><span data-lang="en">Our Exclusive Advantage</span><span data-lang="pt">Nosso Diferencial Exclusivo</span></span>
     <h2 data-lang="en">The only ORM firm that operates in <em>both Googles.</em></h2>
-    <h2 data-lang="pt">A ÃÂºnica empresa de reputaÃÂ§ÃÂ£o que atua nos <em>dois Googles.</em></h2>
-    <p class="section-sub" data-lang="en">Google Brazil and Google International are two distinct ecosystems Ã¢ÂÂ different algorithms, content signals, legal frameworks, and cultural dynamics. Most firms know one. We know both.</p>
-    <p class="section-sub" data-lang="pt">O Google Brasil e o Google Internacional sÃÂ£o dois ecossistemas distintos Ã¢ÂÂ algoritmos, sinais de conteÃÂºdo, legislaÃÂ§ÃÂµes e dinÃÂ¢micas culturais diferentes. A maioria das empresas conhece um. NÃÂ³s conhecemos os dois.</p>
+    <h2 data-lang="pt">A única empresa de reputação que atua nos <em>dois Googles.</em></h2>
+    <p class="section-sub" data-lang="en">Google Brazil and Google International are two distinct ecosystems — different algorithms, content signals, legal frameworks, and cultural dynamics. Most firms know one. We know both.</p>
+    <p class="section-sub" data-lang="pt">O Google Brasil e o Google Internacional são dois ecossistemas distintos — algoritmos, sinais de conteúdo, legislações e dinâmicas culturais diferentes. A maioria das empresas conhece um. Nós conhecemos os dois.</p>
   </div>
 
   <div class="dual-grid fade-up">
 
     <!-- GOOGLE BRASIL -->
     <div class="dual-col">
-      <div class="dual-col-header br">Ã°ÂÂÂ§Ã°ÂÂÂ· &nbsp;Google Brasil</div>
+      <div class="dual-col-header br">🇧🇷 &nbsp;Google Brasil</div>
       <div class="dual-rows">
         <div class="dual-row">
-          <span class="dual-row-label"><span data-lang="en">Content</span><span data-lang="pt">ConteÃÂºdo</span></span>
+          <span class="dual-row-label"><span data-lang="en">Content</span><span data-lang="pt">Conteúdo</span></span>
           <span class="dual-row-text" data-lang="en">Production in Portuguese with local tone, high-authority Brazilian portals and niche blogs.</span>
-          <span class="dual-row-text" data-lang="pt">ProduÃÂ§ÃÂ£o em portuguÃÂªs com tom local, portais brasileiros de alta autoridade e blogs de nicho.</span>
+          <span class="dual-row-text" data-lang="pt">Produção em português com tom local, portais brasileiros de alta autoridade e blogs de nicho.</span>
         </div>
         <div class="dual-row">
           <span class="dual-row-label"><span data-lang="en">PR &amp; Press</span><span data-lang="pt">Assessoria de Imprensa</span></span>
           <span class="dual-row-text" data-lang="en">UOL, G1, Exame, regional outlets and specialist media with strong indexing on Google BR.</span>
-          <span class="dual-row-text" data-lang="pt">UOL, G1, Exame, veÃÂ­culos regionais e mÃÂ­dias especializadas com forte indexaÃÂ§ÃÂ£o no Google BR.</span>
+          <span class="dual-row-text" data-lang="pt">UOL, G1, Exame, veículos regionais e mídias especializadas com forte indexação no Google BR.</span>
         </div>
         <div class="dual-row">
-          <span class="dual-row-label"><span data-lang="en">SEO Techniques</span><span data-lang="pt">TÃÂ©cnicas de SEO</span></span>
+          <span class="dual-row-label"><span data-lang="en">SEO Techniques</span><span data-lang="pt">Técnicas de SEO</span></span>
           <span class="dual-row-text" data-lang="en">.com.br domains, local citations, Google Business Profile and Brazilian search behavior signals.</span>
-          <span class="dual-row-text" data-lang="pt">DomÃÂ­nios .com.br, citaÃÂ§ÃÂµes locais, Google Meu NegÃÂ³cio e sinais de comportamento de busca brasileiros.</span>
+          <span class="dual-row-text" data-lang="pt">Domínios .com.br, citações locais, Google Meu Negócio e sinais de comportamento de busca brasileiros.</span>
         </div>
         <div class="dual-row">
-          <span class="dual-row-label"><span data-lang="en">Legal Removals</span><span data-lang="pt">RemoÃÂ§ÃÂµes Legais</span></span>
-          <span class="dual-row-text" data-lang="en">LGPD and Marco Civil da Internet Ã¢ÂÂ Brazilian law applied to right-to-be-forgotten requests.</span>
-          <span class="dual-row-text" data-lang="pt">LGPD e Marco Civil da Internet Ã¢ÂÂ legislaÃÂ§ÃÂ£o brasileira aplicada ao direito ao esquecimento digital.</span>
+          <span class="dual-row-label"><span data-lang="en">Legal Removals</span><span data-lang="pt">Remoções Legais</span></span>
+          <span class="dual-row-text" data-lang="en">LGPD and Marco Civil da Internet — Brazilian law applied to right-to-be-forgotten requests.</span>
+          <span class="dual-row-text" data-lang="pt">LGPD e Marco Civil da Internet — legislação brasileira aplicada ao direito ao esquecimento digital.</span>
         </div>
         <div class="dual-row">
           <span class="dual-row-label"><span data-lang="en">Algorithm &amp; Culture</span><span data-lang="pt">Algoritmo e Cultura</span></span>
           <span class="dual-row-text" data-lang="en">Brazilian search behavior, local seasonality and cultural nuances that directly shape reputation perception.</span>
-          <span class="dual-row-text" data-lang="pt">Comportamento de busca brasileiro, sazonalidades locais e nuances culturais que moldam a percepÃÂ§ÃÂ£o de reputaÃÂ§ÃÂ£o.</span>
+          <span class="dual-row-text" data-lang="pt">Comportamento de busca brasileiro, sazonalidades locais e nuances culturais que moldam a percepção de reputação.</span>
         </div>
       </div>
     </div>
 
     <!-- GOOGLE INTERNACIONAL -->
     <div class="dual-col">
-      <div class="dual-col-header intl">Ã°ÂÂÂ &nbsp;Google Internacional</div>
+      <div class="dual-col-header intl">🌎 &nbsp;Google Internacional</div>
       <div class="dual-rows">
         <div class="dual-row">
-          <span class="dual-row-label"><span data-lang="en">Content</span><span data-lang="pt">ConteÃÂºdo</span></span>
+          <span class="dual-row-label"><span data-lang="en">Content</span><span data-lang="pt">Conteúdo</span></span>
           <span class="dual-row-text" data-lang="en">English-language production with global authority tone, placements in Forbes, Reuters and Bloomberg.</span>
-          <span class="dual-row-text" data-lang="pt">ProduÃÂ§ÃÂ£o em inglÃÂªs com tom de autoridade global, publicaÃÂ§ÃÂµes em Forbes, Reuters e Bloomberg.</span>
+          <span class="dual-row-text" data-lang="pt">Produção em inglês com tom de autoridade global, publicações em Forbes, Reuters e Bloomberg.</span>
         </div>
         <div class="dual-row">
           <span class="dual-row-label"><span data-lang="en">PR &amp; Press</span><span data-lang="pt">Assessoria de Imprensa</span></span>
           <span class="dual-row-text" data-lang="en">PR Newswire, Business Wire, American and European media with high Domain Authority scores.</span>
-          <span class="dual-row-text" data-lang="pt">PR Newswire, Business Wire, mÃÂ­dia americana e europeia com alto Domain Authority.</span>
+          <span class="dual-row-text" data-lang="pt">PR Newswire, Business Wire, mídia americana e europeia com alto Domain Authority.</span>
         </div>
         <div class="dual-row">
-          <span class="dual-row-label"><span data-lang="en">SEO Techniques</span><span data-lang="pt">TÃÂ©cnicas de SEO</span></span>
+          <span class="dual-row-label"><span data-lang="en">SEO Techniques</span><span data-lang="pt">Técnicas de SEO</span></span>
           <span class="dual-row-text" data-lang="en">International backlinks, global domain authority building and multilingual site architecture.</span>
-          <span class="dual-row-text" data-lang="pt">Backlinks internacionais, autoridade de domÃÂ­nio global e arquitetura multilÃÂ­ngue de sites.</span>
+          <span class="dual-row-text" data-lang="pt">Backlinks internacionais, autoridade de domínio global e arquitetura multilíngue de sites.</span>
         </div>
         <div class="dual-row">
-          <span class="dual-row-label"><span data-lang="en">Legal Removals</span><span data-lang="pt">RemoÃÂ§ÃÂµes Legais</span></span>
+          <span class="dual-row-label"><span data-lang="en">Legal Removals</span><span data-lang="pt">Remoções Legais</span></span>
           <span class="dual-row-text" data-lang="en">DMCA (USA), GDPR (Europe) and CCPA (California) for effective cross-border content removals.</span>
-          <span class="dual-row-text" data-lang="pt">DMCA (EUA), GDPR (Europa) e CCPA (CalifÃÂ³rnia) para remoÃÂ§ÃÂµes de conteÃÂºdo cross-border.</span>
+          <span class="dual-row-text" data-lang="pt">DMCA (EUA), GDPR (Europa) e CCPA (Califórnia) para remoções de conteúdo cross-border.</span>
         </div>
         <div class="dual-row">
           <span class="dual-row-label"><span data-lang="en">Algorithm &amp; Culture</span><span data-lang="pt">Algoritmo e Cultura</span></span>
           <span class="dual-row-text" data-lang="en">Global ranking logic, E-E-A-T signals and international authority markers that drive search dominance.</span>
-          <span class="dual-row-text" data-lang="pt">LÃÂ³gica de ranqueamento global, sinais E-E-A-T e marcadores de autoridade internacional.</span>
+          <span class="dual-row-text" data-lang="pt">Lógica de ranqueamento global, sinais E-E-A-T e marcadores de autoridade internacional.</span>
         </div>
       </div>
     </div>
@@ -702,8 +677,8 @@
   </div>
 
   <div class="dual-tagline fade-up">
-    <span data-lang="en">"A company built in Miami with deep Brazilian roots Ã¢ÂÂ giving us the unique ability to protect and build your reputation wherever your audience searches for you: <em>Brazil, the US, or both.</em>"</span>
-    <span data-lang="pt">"Uma empresa construÃÂ­da em Miami com raÃÂ­zes profundas no Brasil Ã¢ÂÂ o que nos dÃÂ¡ a capacidade ÃÂºnica de proteger e construir sua reputaÃÂ§ÃÂ£o onde quer que seu pÃÂºblico te busque: <em>no Brasil, nos EUA, ou nos dois.</em>"</span>
+    <span data-lang="en">"A company built in Miami with deep Brazilian roots — giving us the unique ability to protect and build your reputation wherever your audience searches for you: <em>Brazil, the US, or both.</em>"</span>
+    <span data-lang="pt">"Uma empresa construída em Miami com raízes profundas no Brasil — o que nos dá a capacidade única de proteger e construir sua reputação onde quer que seu público te busque: <em>no Brasil, nos EUA, ou nos dois.</em>"</span>
   </div>
 </section>
 
@@ -712,10 +687,10 @@
   <div class="band-text">
     <h3><span data-lang="en">100% Confidential &amp; Discreet</span><span data-lang="pt">100% Confidencial e Discreto</span></h3>
     <p data-lang="en">All work is protected under a non-disclosure agreement from day one.</p>
-    <p data-lang="pt">Todo o trabalho ÃÂ© protegido por acordo de confidencialidade desde o primeiro dia.</p>
+    <p data-lang="pt">Todo o trabalho é protegido por acordo de confidencialidade desde o primeiro dia.</p>
   </div>
-  <div class="band-badge"><span data-lang="en">NDA Protected ÃÂ· Fully Discreet</span><span data-lang="pt">Protegido por NDA ÃÂ· Total DiscriÃÂ§ÃÂ£o</span></div>
-  <a href="#contact" class="btn-primary"><span data-lang="en">Start Your Proposal Ã¢ÂÂ</span><span data-lang="pt">Solicitar Proposta Ã¢ÂÂ</span></a>
+  <div class="band-badge"><span data-lang="en">NDA Protected · Fully Discreet</span><span data-lang="pt">Protegido por NDA · Total Discrição</span></div>
+  <a href="#contact" class="btn-primary"><span data-lang="en">Start Your Proposal →</span><span data-lang="pt">Solicitar Proposta →</span></a>
 </div>
 
 
@@ -724,9 +699,9 @@
 <section id="contact">
   <span class="section-tag"><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></span>
   <h2 data-lang="en">Let's build your next <em>digital chapter.</em></h2>
-  <h2 data-lang="pt">Vamos construir seu prÃÂ³ximo <em>capÃÂ­tulo digital.</em></h2>
-  <p class="section-sub" data-lang="en">Our team is ready to understand your context and deliver a custom strategy. No commitment, no sales pitch Ã¢ÂÂ just a real conversation.</p>
-  <p class="section-sub" data-lang="pt">Nossa equipe estÃÂ¡ pronta para entender seu contexto e entregar uma estratÃÂ©gia personalizada. Sem compromisso, sem pitch de vendas Ã¢ÂÂ apenas uma conversa real.</p>
+  <h2 data-lang="pt">Vamos construir seu próximo <em>capítulo digital.</em></h2>
+  <p class="section-sub" data-lang="en">Our team is ready to understand your context and deliver a custom strategy. No commitment, no sales pitch — just a real conversation.</p>
+  <p class="section-sub" data-lang="pt">Nossa equipe está pronta para entender seu contexto e entregar uma estratégia personalizada. Sem compromisso, sem pitch de vendas — apenas uma conversa real.</p>
 
   <div class="contact-grid fade-up">
     <div class="contact-info">
@@ -739,17 +714,17 @@
         <a href="mailto:team@silicon-minds.com">team@silicon-minds.com</a>
       </div>
       <div class="contact-item">
-        <h4><span data-lang="en">Office</span><span data-lang="pt">EscritÃÂ³rio</span></h4>
+        <h4><span data-lang="en">Office</span><span data-lang="pt">Escritório</span></h4>
         <p>95 Merrick Way, 3rd Floor<br>Coral Gables, FL 33134</p>
       </div>
       <div class="contact-item">
-        <h4><span data-lang="en">Hours</span><span data-lang="pt">HorÃÂ¡rio</span></h4>
-        <p><span data-lang="en">MonÃ¢ÂÂFri ÃÂ· 10am Ã¢ÂÂ 5pm EST</span><span data-lang="pt">SegÃ¢ÂÂSex ÃÂ· 10h ÃÂ s 17h EST</span></p>
+        <h4><span data-lang="en">Hours</span><span data-lang="pt">Horário</span></h4>
+        <p><span data-lang="en">Mon–Fri · 10am – 5pm EST</span><span data-lang="pt">Seg–Sex · 10h às 17h EST</span></p>
       </div>
     </div>
 
     <form class="contact-form" id="contactForm" action="https://formsubmit.co/team@silicon-minds.com" method="POST" onsubmit="handleSubmit(event)">
-      <input type="hidden" name="_subject" value="New inquiry Ã¢ÂÂ Silicon Minds"/>
+      <input type="hidden" name="_subject" value="New inquiry — Silicon Minds"/>
       <input type="hidden" name="_captcha" value="false"/>
       <input type="hidden" name="_template" value="table"/>
       <div class="form-row">
@@ -767,7 +742,7 @@
         <input type="tel" name="phone" placeholder="+1 (000) 000-0000"/>
       </div>
       <div class="form-field">
-        <label><span data-lang="en">Service of Interest</span><span data-lang="pt">ServiÃÂ§o de Interesse</span></label>
+        <label><span data-lang="en">Service of Interest</span><span data-lang="pt">Serviço de Interesse</span></label>
         <select id="svc-select" name="service"></select>
       </div>
       <div class="form-field">
@@ -775,7 +750,7 @@
         <textarea id="f-msg" name="message"></textarea>
       </div>
       <button type="submit" class="form-submit" id="submit-btn">
-        <span data-lang="en">Send Message Ã¢ÂÂ</span><span data-lang="pt">Enviar Mensagem Ã¢ÂÂ</span>
+        <span data-lang="en">Send Message →</span><span data-lang="pt">Enviar Mensagem →</span>
       </button>
     </form>
   </div>
@@ -787,14 +762,14 @@
     <div class="footer-brand">
       <a href="#" class="nav-logo" style="font-size:1.5rem">Silicon<span style="color:var(--bg-400)">Minds</span></a>
       <p data-lang="en">Strategic reputation management for businesses and individuals. Based in Miami, operating globally.</p>
-      <p data-lang="pt">GestÃÂ£o estratÃÂ©gica de reputaÃÂ§ÃÂ£o para empresas e profissionais. Sediada em Miami, atuando globalmente.</p>
+      <p data-lang="pt">Gestão estratégica de reputação para empresas e profissionais. Sediada em Miami, atuando globalmente.</p>
     </div>
     <div class="footer-col">
       <h5><span data-lang="en">Platform</span><span data-lang="pt">Plataforma</span></h5>
       <ul>
         <li><a href="#about"><span data-lang="en">About</span><span data-lang="pt">Sobre</span></a></li>
-        <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">ServiÃÂ§os</span></a></li>
-        <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que NÃÂ³s</span></a></li>
+        <li><a href="#services"><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a></li>
+        <li><a href="#why"><span data-lang="en">Why Us</span><span data-lang="pt">Por Que Nós</span></a></li>
         <li><a href="#dual-expertise"><span data-lang="en">Our Edge</span><span data-lang="pt">Diferencial</span></a></li>
       </ul>
     </div>
@@ -808,7 +783,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>2026 ÃÂ© Silicon Minds ÃÂ· <span data-lang="en">All rights reserved.</span><span data-lang="pt">Todos os direitos reservados.</span></p>
+    <p>2026 © Silicon Minds · <span data-lang="en">All rights reserved.</span><span data-lang="pt">Todos os direitos reservados.</span></p>
     <div class="footer-socials">
       <a href="https://linkedin.com/company/silicon-minds-llc" class="social-btn" target="_blank">in</a>
       <a href="https://instagram.com/mindssilicon" class="social-btn" target="_blank">ig</a>
@@ -816,23 +791,23 @@
   </div>
 </footer>
 
-<!-- SERVICE MODALS (CSS :target Ã¢ÂÂ zero JavaScript) -->
+<!-- SERVICE MODALS (CSS :target — zero JavaScript) -->
 <div id="modal-orm" class="svc-modal">
   <div class="svc-modal-inner">
     <div class="svc-modal-box">
-      <a href="#services" class="svc-modal-close">Ã¢ÂÂ</a>
-      <span class="svc-modal-tag"><span data-lang="en">Our Core Service</span><span data-lang="pt">Nosso ServiÃÂ§o Principal</span></span>
-      <span class="svc-modal-icon">Ã°ÂÂÂ¡Ã¯Â¸Â</span>
-      <div class="svc-modal-title"><span data-lang="en">Online Reputation Management</span><span data-lang="pt">GestÃÂ£o de ReputaÃÂ§ÃÂ£o Online</span></div>
-      <div class="svc-modal-body"><span data-lang="en">Your online reputation is what people see when they search your name or company. Silicon Minds actively suppresses negative content, amplifies positive results, and builds a digital presence that earns trust at first click.</span><span data-lang="pt">Sua reputaÃÂ§ÃÂ£o online ÃÂ© o que aparece quando alguÃÂ©m pesquisa seu nome ou empresa. A Silicon Minds trabalha ativamente para suprimir conteÃÂºdos negativos, amplificar resultados positivos e construir uma presenÃÂ§a digital que gera confianÃÂ§a desde o primeiro clique.</span></div>
+      <a href="#services" class="svc-modal-close">✕</a>
+      <span class="svc-modal-tag"><span data-lang="en">Our Core Service</span><span data-lang="pt">Nosso Serviço Principal</span></span>
+      <span class="svc-modal-icon">🛡️</span>
+      <div class="svc-modal-title"><span data-lang="en">Online Reputation Management</span><span data-lang="pt">Gestão de Reputação Online</span></div>
+      <div class="svc-modal-body"><span data-lang="en">Your online reputation is what people see when they search your name or company. Silicon Minds actively suppresses negative content, amplifies positive results, and builds a digital presence that earns trust at first click.</span><span data-lang="pt">Sua reputação online é o que aparece quando alguém pesquisa seu nome ou empresa. A Silicon Minds trabalha ativamente para suprimir conteúdos negativos, amplificar resultados positivos e construir uma presença digital que gera confiança desde o primeiro clique.</span></div>
       <ul class="svc-modal-list">
-        <li><span data-lang="en">Suppression of false reviews and defamatory content</span><span data-lang="pt">SupressÃÂ£o de avaliaÃÂ§ÃÂµes falsas e conteÃÂºdos difamatÃÂ³rios</span></li>
-        <li><span data-lang="en">Positioning of positive profiles and articles on page one</span><span data-lang="pt">Posicionamento de perfis e artigos positivos na primeira pÃÂ¡gina</span></li>
-        <li><span data-lang="en">Continuous AI-powered monitoring 24/7</span><span data-lang="pt">Monitoramento contÃÂ­nuo com IA 24/7</span></li>
-        <li><span data-lang="en">Custom strategy for individuals and businesses</span><span data-lang="pt">EstratÃÂ©gia personalizada para pessoas fÃÂ­sicas e empresas</span></li>
-        <li><span data-lang="en">Monthly reports tracking your progress</span><span data-lang="pt">RelatÃÂ³rios mensais com evoluÃÂ§ÃÂ£o dos resultados</span></li>
+        <li><span data-lang="en">Suppression of false reviews and defamatory content</span><span data-lang="pt">Supressão de avaliações falsas e conteúdos difamatórios</span></li>
+        <li><span data-lang="en">Positioning of positive profiles and articles on page one</span><span data-lang="pt">Posicionamento de perfis e artigos positivos na primeira página</span></li>
+        <li><span data-lang="en">Continuous AI-powered monitoring 24/7</span><span data-lang="pt">Monitoramento contínuo com IA 24/7</span></li>
+        <li><span data-lang="en">Custom strategy for individuals and businesses</span><span data-lang="pt">Estratégia personalizada para pessoas físicas e empresas</span></li>
+        <li><span data-lang="en">Monthly reports tracking your progress</span><span data-lang="pt">Relatórios mensais com evolução dos resultados</span></li>
       </ul>
-      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Get My Free Proposal Ã¢ÂÂ</span><span data-lang="pt">Solicitar Proposta GrÃÂ¡tis Ã¢ÂÂ</span></a>
+      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Request a Confidential Proposal &rarr; →</span><span data-lang="pt">Solicitar Proposta Grátis →</span></a>
     </div>
   </div>
 </div>
@@ -840,19 +815,19 @@
 <div id="modal-seo" class="svc-modal">
   <div class="svc-modal-inner">
     <div class="svc-modal-box">
-      <a href="#services" class="svc-modal-close">Ã¢ÂÂ</a>
-      <span class="svc-modal-tag"><span data-lang="en">Strategic Visibility</span><span data-lang="pt">Visibilidade EstratÃÂ©gica</span></span>
-      <span class="svc-modal-icon">Ã°ÂÂÂ</span>
-      <div class="svc-modal-title"><span data-lang="en">SEO Strategy</span><span data-lang="pt">EstratÃÂ©gia de SEO</span></div>
-      <div class="svc-modal-body"><span data-lang="en">Ranking on search engines is not luck Ã¢ÂÂ it is strategy. Our team combines technical SEO, content production, and link authority building to place your brand at the top and consistently attract qualified leads.</span><span data-lang="pt">Estar bem posicionado nos buscadores nÃÂ£o ÃÂ© sorte Ã¢ÂÂ ÃÂ© estratÃÂ©gia. Nossa equipe combina SEO tÃÂ©cnico, produÃÂ§ÃÂ£o de conteÃÂºdo e construÃÂ§ÃÂ£o de autoridade de links para levar sua marca ÃÂ s primeiras posiÃÂ§ÃÂµes.</span></div>
+      <a href="#services" class="svc-modal-close">✕</a>
+      <span class="svc-modal-tag"><span data-lang="en">Strategic Visibility</span><span data-lang="pt">Visibilidade Estratégica</span></span>
+      <span class="svc-modal-icon">🔍</span>
+      <div class="svc-modal-title"><span data-lang="en">SEO Strategy</span><span data-lang="pt">Estratégia de SEO</span></div>
+      <div class="svc-modal-body"><span data-lang="en">Ranking on search engines is not luck — it is strategy. Our team combines technical SEO, content production, and link authority building to place your brand at the top and consistently attract qualified leads.</span><span data-lang="pt">Estar bem posicionado nos buscadores não é sorte — é estratégia. Nossa equipe combina SEO técnico, produção de conteúdo e construção de autoridade de links para levar sua marca às primeiras posições.</span></div>
       <ul class="svc-modal-list">
-        <li><span data-lang="en">Full technical audit of your website</span><span data-lang="pt">Auditoria tÃÂ©cnica completa do seu site</span></li>
-        <li><span data-lang="en">Strategic keyword research and mapping</span><span data-lang="pt">Pesquisa e seleÃÂ§ÃÂ£o de palavras-chave estratÃÂ©gicas</span></li>
-        <li><span data-lang="en">Optimized high-quality content production</span><span data-lang="pt">ProduÃÂ§ÃÂ£o de conteÃÂºdo otimizado e relevante</span></li>
-        <li><span data-lang="en">High-authority backlink building</span><span data-lang="pt">ConstruÃÂ§ÃÂ£o de backlinks de alta autoridade</span></li>
-        <li><span data-lang="en">Ongoing ranking and organic traffic reporting</span><span data-lang="pt">Acompanhamento de rankings e trÃÂ¡fego orgÃÂ¢nico</span></li>
+        <li><span data-lang="en">Full technical audit of your website</span><span data-lang="pt">Auditoria técnica completa do seu site</span></li>
+        <li><span data-lang="en">Strategic keyword research and mapping</span><span data-lang="pt">Pesquisa e seleção de palavras-chave estratégicas</span></li>
+        <li><span data-lang="en">Optimized high-quality content production</span><span data-lang="pt">Produção de conteúdo otimizado e relevante</span></li>
+        <li><span data-lang="en">High-authority backlink building</span><span data-lang="pt">Construção de backlinks de alta autoridade</span></li>
+        <li><span data-lang="en">Ongoing ranking and organic traffic reporting</span><span data-lang="pt">Acompanhamento de rankings e tráfego orgânico</span></li>
       </ul>
-      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Get My Free Proposal Ã¢ÂÂ</span><span data-lang="pt">Solicitar Proposta GrÃÂ¡tis Ã¢ÂÂ</span></a>
+      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Request a Confidential Proposal &rarr; →</span><span data-lang="pt">Solicitar Proposta Grátis →</span></a>
     </div>
   </div>
 </div>
@@ -860,19 +835,19 @@
 <div id="modal-crise" class="svc-modal">
   <div class="svc-modal-inner">
     <div class="svc-modal-box">
-      <a href="#services" class="svc-modal-close">Ã¢ÂÂ</a>
+      <a href="#services" class="svc-modal-close">✕</a>
       <span class="svc-modal-tag"><span data-lang="en">Immediate Response</span><span data-lang="pt">Resposta Imediata</span></span>
-      <span class="svc-modal-icon">Ã¢ÂÂ¡</span>
-      <div class="svc-modal-title"><span data-lang="en">Crisis Management</span><span data-lang="pt">GestÃÂ£o de Crises</span></div>
-      <div class="svc-modal-body"><span data-lang="en">When your reputation is under attack, every hour counts. Our crisis response team acts quickly to contain damage, correct narratives, and guide your brand through turbulent moments with full discretion.</span><span data-lang="pt">Quando sua reputaÃÂ§ÃÂ£o estÃÂ¡ sob ataque, cada hora conta. Nossa equipe de resposta a crises age de forma rÃÂ¡pida para conter danos, corrigir narrativas e guiar sua marca em momentos turbulentos com total discriÃÂ§ÃÂ£o.</span></div>
+      <span class="svc-modal-icon">⚡</span>
+      <div class="svc-modal-title"><span data-lang="en">Crisis Management</span><span data-lang="pt">Gestão de Crises</span></div>
+      <div class="svc-modal-body"><span data-lang="en">When your reputation is under attack, every hour counts. Our crisis response team acts quickly to contain damage, correct narratives, and guide your brand through turbulent moments with full discretion.</span><span data-lang="pt">Quando sua reputação está sob ataque, cada hora conta. Nossa equipe de resposta a crises age de forma rápida para conter danos, corrigir narrativas e guiar sua marca em momentos turbulentos com total discrição.</span></div>
       <ul class="svc-modal-list">
-        <li><span data-lang="en">Crisis team activation within 24 hours</span><span data-lang="pt">AtivaÃÂ§ÃÂ£o de equipe de crise em atÃÂ© 24 horas</span></li>
-        <li><span data-lang="en">Intensive monitoring of mentions and media coverage</span><span data-lang="pt">Monitoramento intensivo de menÃÂ§ÃÂµes e cobertura na mÃÂ­dia</span></li>
-        <li><span data-lang="en">Counter-narrative strategy and official communications</span><span data-lang="pt">EstratÃÂ©gia de contra-narrativa e comunicaÃÂ§ÃÂ£o oficial</span></li>
-        <li><span data-lang="en">Removal or suppression of harmful content</span><span data-lang="pt">RemoÃÂ§ÃÂ£o ou supressÃÂ£o de conteÃÂºdos prejudiciais</span></li>
-        <li><span data-lang="en">Post-crisis report with image recovery plan</span><span data-lang="pt">RelatÃÂ³rio pÃÂ³s-crise com plano de recuperaÃÂ§ÃÂ£o de imagem</span></li>
+        <li><span data-lang="en">Crisis team activation within 24 hours</span><span data-lang="pt">Ativação de equipe de crise em até 24 horas</span></li>
+        <li><span data-lang="en">Intensive monitoring of mentions and media coverage</span><span data-lang="pt">Monitoramento intensivo de menções e cobertura na mídia</span></li>
+        <li><span data-lang="en">Counter-narrative strategy and official communications</span><span data-lang="pt">Estratégia de contra-narrativa e comunicação oficial</span></li>
+        <li><span data-lang="en">Removal or suppression of harmful content</span><span data-lang="pt">Remoção ou supressão de conteúdos prejudiciais</span></li>
+        <li><span data-lang="en">Post-crisis report with image recovery plan</span><span data-lang="pt">Relatório pós-crise com plano de recuperação de imagem</span></li>
       </ul>
-      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Get My Free Proposal Ã¢ÂÂ</span><span data-lang="pt">Solicitar Proposta GrÃÂ¡tis Ã¢ÂÂ</span></a>
+      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Request a Confidential Proposal &rarr; →</span><span data-lang="pt">Solicitar Proposta Grátis →</span></a>
     </div>
   </div>
 </div>
@@ -880,24 +855,24 @@
 <div id="modal-pr" class="svc-modal">
   <div class="svc-modal-inner">
     <div class="svc-modal-box">
-      <a href="#services" class="svc-modal-close">Ã¢ÂÂ</a>
-      <span class="svc-modal-tag"><span data-lang="en">Strategic Communications</span><span data-lang="pt">ComunicaÃÂ§ÃÂ£o EstratÃÂ©gica</span></span>
-      <span class="svc-modal-icon">Ã°ÂÂÂ£</span>
+      <a href="#services" class="svc-modal-close">✕</a>
+      <span class="svc-modal-tag"><span data-lang="en">Strategic Communications</span><span data-lang="pt">Comunicação Estratégica</span></span>
+      <span class="svc-modal-icon">📣</span>
       <div class="svc-modal-title"><span data-lang="en">PR Services</span><span data-lang="pt">Assessoria de Imprensa</span></div>
-      <div class="svc-modal-body"><span data-lang="en">The right press coverage can transform your brand. We develop strategic communications and media relations that earn coverage in the publications your audience actually reads.</span><span data-lang="pt">A imprensa certa pode transformar sua marca. Desenvolvemos estratÃÂ©gias de comunicaÃÂ§ÃÂ£o e relaÃÂ§ÃÂµes com a mÃÂ­dia que garantem cobertura nas publicaÃÂ§ÃÂµes que seu pÃÂºblico realmente lÃÂª.</span></div>
+      <div class="svc-modal-body"><span data-lang="en">The right press coverage can transform your brand. We develop strategic communications and media relations that earn coverage in the publications your audience actually reads.</span><span data-lang="pt">A imprensa certa pode transformar sua marca. Desenvolvemos estratégias de comunicação e relações com a mídia que garantem cobertura nas publicações que seu público realmente lê.</span></div>
       <ul class="svc-modal-list">
-        <li><span data-lang="en">Professional press releases and media materials</span><span data-lang="pt">CriaÃÂ§ÃÂ£o de releases e materiais de imprensa profissionais</span></li>
-        <li><span data-lang="en">Relationships with journalists and specialist outlets</span><span data-lang="pt">Relacionamento com jornalistas e veÃÂ­culos especializados</span></li>
+        <li><span data-lang="en">Professional press releases and media materials</span><span data-lang="pt">Criação de releases e materiais de imprensa profissionais</span></li>
+        <li><span data-lang="en">Relationships with journalists and specialist outlets</span><span data-lang="pt">Relacionamento com jornalistas e veículos especializados</span></li>
         <li><span data-lang="en">Positioning as an expert and authority source</span><span data-lang="pt">Posicionamento como especialista e fonte de autoridade</span></li>
-        <li><span data-lang="en">Editorial planning and story calendar</span><span data-lang="pt">Planejamento editorial e calendÃÂ¡rio de pautas</span></li>
+        <li><span data-lang="en">Editorial planning and story calendar</span><span data-lang="pt">Planejamento editorial e calendário de pautas</span></li>
         <li><span data-lang="en">Coverage in national and international portals</span><span data-lang="pt">Cobertura em portais nacionais e internacionais</span></li>
       </ul>
-      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Get My Free Proposal Ã¢ÂÂ</span><span data-lang="pt">Solicitar Proposta GrÃÂ¡tis Ã¢ÂÂ</span></a>
+      <a href="#contact" class="svc-modal-cta"><span data-lang="en">Request a Confidential Proposal &rarr; →</span><span data-lang="pt">Solicitar Proposta Grátis →</span></a>
     </div>
   </div>
 </div>
 
-<!-- Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ CHATBOT Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ -->
+<!-- ═══════════════════════════ CHATBOT ═══════════════════════════ -->
 <style>
 #sm-chat-btn {
   position: fixed; bottom: 2rem; right: 2rem; z-index: 9000;
@@ -1020,16 +995,16 @@
 <!-- Chat Window -->
 <div id="sm-chat-window" role="dialog" aria-label="Silicon Minds Chat">
   <div class="sm-chat-header">
-    <div class="sm-chat-avatar">Ã°ÂÂÂ¡Ã¯Â¸Â</div>
+    <div class="sm-chat-avatar">🛡️</div>
     <div class="sm-chat-header-text">
       <h4>Silicon Minds</h4>
-      <p id="sm-header-status">// Online ÃÂ· Response in minutes</p>
+      <p id="sm-header-status">// Online · Response in minutes</p>
     </div>
   </div>
   <div class="sm-chat-messages" id="smMessages"></div>
   <div class="sm-chat-options" id="smOptions"></div>
   <div class="sm-chat-input-row">
-    <input class="sm-chat-input" id="smInput" placeholder="Type a messageÃ¢ÂÂ¦" onkeydown="if(event.key==='Enter')smSend()"/>
+    <input class="sm-chat-input" id="smInput" placeholder="Type a message…" onkeydown="if(event.key==='Enter')smSend()"/>
     <button class="sm-chat-send" onclick="smSend()">
       <svg viewBox="0 0 24 24" fill="none" stroke="var(--black)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
@@ -1037,44 +1012,44 @@
 </div>
 
 <script>
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ Chatbot Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ─── Chatbot ────────────────────────────────────────────────
 const SM_BOT = {
   en: {
-    header: '// Online ÃÂ· Response in minutes',
-    inputPh: 'Type a messageÃ¢ÂÂ¦',
-    greeting: "Hi! Ã°ÂÂÂ I'm the Silicon Minds assistant. How can I help you today?",
+    header: '// Online · Response in minutes',
+    inputPh: 'Type a message…',
+    greeting: "Hi! 👋 I'm the Silicon Minds assistant. How can I help you today?",
     menu: [
-      { label: 'Ã°ÂÂÂ¡Ã¯Â¸Â Reputation Management', key: 'orm' },
-      { label: 'Ã°ÂÂÂ SEO Strategy',           key: 'seo' },
-      { label: 'Ã¢ÂÂ¡ Crisis Management',       key: 'crisis' },
-      { label: 'Ã°ÂÂÂ£ PR Services',             key: 'pr' },
-      { label: 'Ã°ÂÂÂ Google BR vs Global',     key: 'dual' },
-      { label: 'Ã°ÂÂÂ¬ Talk to a specialist',    key: 'contact' },
+      { label: '🛡️ Reputation Management', key: 'orm' },
+      { label: '🔍 SEO Strategy',           key: 'seo' },
+      { label: '⚡ Crisis Management',       key: 'crisis' },
+      { label: '📣 PR Services',             key: 'pr' },
+      { label: '🌎 Google BR vs Global',     key: 'dual' },
+      { label: '💬 Talk to a specialist',    key: 'contact' },
     ],
     answers: {
       orm: {
         text: "Our <b>Online Reputation Management</b> service suppresses negative content, amplifies positive results, and builds a Google presence that earns trust from the first click.<br><br>Results typically start becoming visible within <b>30 days</b>, with full search page dominance in ~90 days.",
-        opts: [{ label: 'Ã°ÂÂÂ Get a free proposal', key: 'contact' }, { label: 'Ã¢ÂÂ Back to menu', key: 'menu' }]
+        opts: [{ label: '📋 Get a free proposal', key: 'contact' }, { label: '← Back to menu', key: 'menu' }]
       },
       seo: {
-        text: "Our <b>SEO Strategy</b> combines technical audits, keyword research, content production, and high-authority backlink building Ã¢ÂÂ for both Google Brazil (.com.br) and Google International.<br><br>We don't just rank. We rank the right content.",
-        opts: [{ label: 'Ã°ÂÂÂ Get a free proposal', key: 'contact' }, { label: 'Ã¢ÂÂ Back to menu', key: 'menu' }]
+        text: "Our <b>SEO Strategy</b> combines technical audits, keyword research, content production, and high-authority backlink building — for both Google Brazil (.com.br) and Google International.<br><br>We don't just rank. We rank the right content.",
+        opts: [{ label: '📋 Get a free proposal', key: 'contact' }, { label: '← Back to menu', key: 'menu' }]
       },
       crisis: {
-        text: "When your reputation is under attack, every hour counts. Our <b>Crisis Management</b> team activates within 24 hours to contain damage, correct narratives, and suppress harmful content Ã¢ÂÂ with full discretion.",
-        opts: [{ label: 'Ã°ÂÂÂ¨ Speak to us now', key: 'contact' }, { label: 'Ã¢ÂÂ Back to menu', key: 'menu' }]
+        text: "When your reputation is under attack, every hour counts. Our <b>Crisis Management</b> team activates within 24 hours to contain damage, correct narratives, and suppress harmful content — with full discretion.",
+        opts: [{ label: '🚨 Speak to us now', key: 'contact' }, { label: '← Back to menu', key: 'menu' }]
       },
       pr: {
-        text: "Our <b>PR Services</b> secure editorial coverage in the publications your audience reads Ã¢ÂÂ from UOL and G1 in Brazil to Forbes and Reuters internationally.<br><br>We build authority that lasts.",
-        opts: [{ label: 'Ã°ÂÂÂ Get a free proposal', key: 'contact' }, { label: 'Ã¢ÂÂ Back to menu', key: 'menu' }]
+        text: "Our <b>PR Services</b> secure editorial coverage in the publications your audience reads — from UOL and G1 in Brazil to Forbes and Reuters internationally.<br><br>We build authority that lasts.",
+        opts: [{ label: '📋 Get a free proposal', key: 'contact' }, { label: '← Back to menu', key: 'menu' }]
       },
       dual: {
-        text: "Silicon Minds is the <b>only ORM firm</b> that operates with deep expertise in both ecosystems:<br><br>Ã°ÂÂÂ§Ã°ÂÂÂ· <b>Google Brazil</b> Ã¢ÂÂ .com.br domains, local portals (UOL, G1), LGPD removals, Brazilian search behavior<br><br>Ã°ÂÂÂ <b>Google International</b> Ã¢ÂÂ global backlinks, Forbes/Reuters placements, DMCA/GDPR removals, E-E-A-T signals<br><br>Most firms know one. We know both.",
-        opts: [{ label: 'Ã°ÂÂÂ Get a free proposal', key: 'contact' }, { label: 'Ã¢ÂÂ Back to menu', key: 'menu' }]
+        text: "Silicon Minds is the <b>only ORM firm</b> that operates with deep expertise in both ecosystems:<br><br>🇧🇷 <b>Google Brazil</b> — .com.br domains, local portals (UOL, G1), LGPD removals, Brazilian search behavior<br><br>🌎 <b>Google International</b> — global backlinks, Forbes/Reuters placements, DMCA/GDPR removals, E-E-A-T signals<br><br>Most firms know one. We know both.",
+        opts: [{ label: '📋 Get a free proposal', key: 'contact' }, { label: '← Back to menu', key: 'menu' }]
       },
       contact: {
         text: "Our team will reach out within a few hours. Please share your <b>name and email</b> below, or go directly to our contact form:",
-        opts: [{ label: 'Ã°ÂÂÂ Open contact form', key: 'form' }, { label: 'Ã¢ÂÂ Back to menu', key: 'menu' }],
+        opts: [{ label: '📝 Open contact form', key: 'form' }, { label: '← Back to menu', key: 'menu' }],
         capture: true
       },
       menu: null,
@@ -1082,41 +1057,41 @@ const SM_BOT = {
     }
   },
   pt: {
-    header: '// Online ÃÂ· Resposta em minutos',
-    inputPh: 'Digite uma mensagemÃ¢ÂÂ¦',
-    greeting: "OlÃÂ¡! Ã°ÂÂÂ Sou o assistente da Silicon Minds. Como posso ajudar?",
+    header: '// Online · Resposta em minutos',
+    inputPh: 'Digite uma mensagem…',
+    greeting: "Olá! 👋 Sou o assistente da Silicon Minds. Como posso ajudar?",
     menu: [
-      { label: 'Ã°ÂÂÂ¡Ã¯Â¸Â GestÃÂ£o de ReputaÃÂ§ÃÂ£o', key: 'orm' },
-      { label: 'Ã°ÂÂÂ EstratÃÂ©gia de SEO',    key: 'seo' },
-      { label: 'Ã¢ÂÂ¡ GestÃÂ£o de Crises',      key: 'crisis' },
-      { label: 'Ã°ÂÂÂ£ Assessoria de Imprensa', key: 'pr' },
-      { label: 'Ã°ÂÂÂ Google BR vs Global',   key: 'dual' },
-      { label: 'Ã°ÂÂÂ¬ Falar com especialista', key: 'contact' },
+      { label: '🛡️ Gestão de Reputação', key: 'orm' },
+      { label: '🔍 Estratégia de SEO',    key: 'seo' },
+      { label: '⚡ Gestão de Crises',      key: 'crisis' },
+      { label: '📣 Assessoria de Imprensa', key: 'pr' },
+      { label: '🌎 Google BR vs Global',   key: 'dual' },
+      { label: '💬 Falar com especialista', key: 'contact' },
     ],
     answers: {
       orm: {
-        text: "Nosso serviÃÂ§o de <b>GestÃÂ£o de ReputaÃÂ§ÃÂ£o Online</b> suprime conteÃÂºdos negativos, amplifica resultados positivos e constrÃÂ³i uma presenÃÂ§a no Google que gera confianÃÂ§a desde o primeiro clique.<br><br>Os primeiros resultados aparecem em <b>30 dias</b>, com dominÃÂ¢ncia total nas buscas em ~90 dias.",
-        opts: [{ label: 'Ã°ÂÂÂ Solicitar proposta gratuita', key: 'contact' }, { label: 'Ã¢ÂÂ Voltar ao menu', key: 'menu' }]
+        text: "Nosso serviço de <b>Gestão de Reputação Online</b> suprime conteúdos negativos, amplifica resultados positivos e constrói uma presença no Google que gera confiança desde o primeiro clique.<br><br>Os primeiros resultados aparecem em <b>30 dias</b>, com dominância total nas buscas em ~90 dias.",
+        opts: [{ label: '📋 Solicitar proposta gratuita', key: 'contact' }, { label: '← Voltar ao menu', key: 'menu' }]
       },
       seo: {
-        text: "Nossa <b>EstratÃÂ©gia de SEO</b> combina auditorias tÃÂ©cnicas, pesquisa de palavras-chave, produÃÂ§ÃÂ£o de conteÃÂºdo e backlinks de alta autoridade Ã¢ÂÂ tanto para o Google Brasil (.com.br) quanto para o Google Internacional.",
-        opts: [{ label: 'Ã°ÂÂÂ Solicitar proposta gratuita', key: 'contact' }, { label: 'Ã¢ÂÂ Voltar ao menu', key: 'menu' }]
+        text: "Nossa <b>Estratégia de SEO</b> combina auditorias técnicas, pesquisa de palavras-chave, produção de conteúdo e backlinks de alta autoridade — tanto para o Google Brasil (.com.br) quanto para o Google Internacional.",
+        opts: [{ label: '📋 Solicitar proposta gratuita', key: 'contact' }, { label: '← Voltar ao menu', key: 'menu' }]
       },
       crisis: {
-        text: "Quando sua reputaÃÂ§ÃÂ£o estÃÂ¡ sob ataque, cada hora conta. Nossa equipe de <b>GestÃÂ£o de Crises</b> ÃÂ© ativada em atÃÂ© 24 horas para conter danos, corrigir narrativas e suprimir conteÃÂºdo prejudicial Ã¢ÂÂ com total discriÃÂ§ÃÂ£o.",
-        opts: [{ label: 'Ã°ÂÂÂ¨ Falar conosco agora', key: 'contact' }, { label: 'Ã¢ÂÂ Voltar ao menu', key: 'menu' }]
+        text: "Quando sua reputação está sob ataque, cada hora conta. Nossa equipe de <b>Gestão de Crises</b> é ativada em até 24 horas para conter danos, corrigir narrativas e suprimir conteúdo prejudicial — com total discrição.",
+        opts: [{ label: '🚨 Falar conosco agora', key: 'contact' }, { label: '← Voltar ao menu', key: 'menu' }]
       },
       pr: {
-        text: "Nossa <b>Assessoria de Imprensa</b> garante cobertura editorial nas publicaÃÂ§ÃÂµes que seu pÃÂºblico lÃÂª Ã¢ÂÂ de UOL e G1 no Brasil a Forbes e Reuters internacionalmente.<br><br>ConstruÃÂ­mos autoridade duradoura.",
-        opts: [{ label: 'Ã°ÂÂÂ Solicitar proposta gratuita', key: 'contact' }, { label: 'Ã¢ÂÂ Voltar ao menu', key: 'menu' }]
+        text: "Nossa <b>Assessoria de Imprensa</b> garante cobertura editorial nas publicações que seu público lê — de UOL e G1 no Brasil a Forbes e Reuters internacionalmente.<br><br>Construímos autoridade duradoura.",
+        opts: [{ label: '📋 Solicitar proposta gratuita', key: 'contact' }, { label: '← Voltar ao menu', key: 'menu' }]
       },
       dual: {
-        text: "A Silicon Minds ÃÂ© a <b>ÃÂºnica empresa de ORM</b> com expertise profunda nos dois ecossistemas:<br><br>Ã°ÂÂÂ§Ã°ÂÂÂ· <b>Google Brasil</b> Ã¢ÂÂ domÃÂ­nios .com.br, portais locais (UOL, G1), remoÃÂ§ÃÂµes LGPD, comportamento de busca brasileiro<br><br>Ã°ÂÂÂ <b>Google Internacional</b> Ã¢ÂÂ backlinks globais, publicaÃÂ§ÃÂµes Forbes/Reuters, remoÃÂ§ÃÂµes DMCA/GDPR, sinais E-E-A-T<br><br>A maioria das empresas conhece um. NÃÂ³s conhecemos os dois.",
-        opts: [{ label: 'Ã°ÂÂÂ Solicitar proposta gratuita', key: 'contact' }, { label: 'Ã¢ÂÂ Voltar ao menu', key: 'menu' }]
+        text: "A Silicon Minds é a <b>única empresa de ORM</b> com expertise profunda nos dois ecossistemas:<br><br>🇧🇷 <b>Google Brasil</b> — domínios .com.br, portais locais (UOL, G1), remoções LGPD, comportamento de busca brasileiro<br><br>🌎 <b>Google Internacional</b> — backlinks globais, publicações Forbes/Reuters, remoções DMCA/GDPR, sinais E-E-A-T<br><br>A maioria das empresas conhece um. Nós conhecemos os dois.",
+        opts: [{ label: '📋 Solicitar proposta gratuita', key: 'contact' }, { label: '← Voltar ao menu', key: 'menu' }]
       },
       contact: {
-        text: "Nossa equipe entrarÃÂ¡ em contato em breve. Compartilhe seu <b>nome e email</b> abaixo, ou acesse diretamente nosso formulÃÂ¡rio:",
-        opts: [{ label: 'Ã°ÂÂÂ Abrir formulÃÂ¡rio', key: 'form' }, { label: 'Ã¢ÂÂ Voltar ao menu', key: 'menu' }],
+        text: "Nossa equipe entrará em contato em breve. Compartilhe seu <b>nome e email</b> abaixo, ou acesse diretamente nosso formulário:",
+        opts: [{ label: '📝 Abrir formulário', key: 'form' }, { label: '← Voltar ao menu', key: 'menu' }],
         capture: true
       },
       menu: null,
@@ -1248,11 +1223,11 @@ function smSend() {
       if (nameField) nameField.value = smCaptureData.name;
       if (emailField) emailField.value = smCaptureData.email;
       smBotMsg(lang === 'pt'
-        ? `Perfeito! Nossa equipe entrarÃÂ¡ em contato com vocÃÂª em breve, <b>${smCaptureData.name}</b>. Ã°ÂÂÂ`
-        : `Perfect! Our team will reach out to you shortly, <b>${smCaptureData.name}</b>. Ã°ÂÂÂ`);
+        ? `Perfeito! Nossa equipe entrará em contato com você em breve, <b>${smCaptureData.name}</b>. 🙌`
+        : `Perfect! Our team will reach out to you shortly, <b>${smCaptureData.name}</b>. 🙌`);
       setTimeout(() => smSetOptions([
-        { label: lang === 'pt' ? 'Ã°ÂÂÂ Ver formulÃÂ¡rio completo' : 'Ã°ÂÂÂ View full form', key: 'form' },
-        { label: lang === 'pt' ? 'Ã¢ÂÂ Voltar ao menu' : 'Ã¢ÂÂ Back to menu', key: 'menu' }
+        { label: lang === 'pt' ? '📝 Ver formulário completo' : '📝 View full form', key: 'form' },
+        { label: lang === 'pt' ? '← Voltar ao menu' : '← Back to menu', key: 'menu' }
       ]), 700);
     }
     return;
@@ -1261,12 +1236,12 @@ function smSend() {
   // keyword matching
   const lc = text.toLowerCase();
   let key = 'menu';
-  if (/reputaÃÂ§|reputation|orm|negativ|review|avali/.test(lc)) key = 'orm';
+  if (/reputaç|reputation|orm|negativ|review|avali/.test(lc)) key = 'orm';
   else if (/seo|search|google|ranke|busca/.test(lc)) key = 'seo';
   else if (/cris|ataque|attack|urgent|emerg/.test(lc)) key = 'crisis';
-  else if (/pr|imprensa|press|mÃÂ­dia|media|notÃÂ­c|noticia/.test(lc)) key = 'pr';
+  else if (/pr|imprensa|press|mídia|media|notíc|noticia/.test(lc)) key = 'pr';
   else if (/brasil|br|internac|global|eua|usa|dois|both/.test(lc)) key = 'dual';
-  else if (/contact|contato|falar|talk|propost|proposta|price|preÃÂ§o/.test(lc)) key = 'contact';
+  else if (/contact|contato|falar|talk|propost|proposta|price|preço/.test(lc)) key = 'contact';
 
   smUserMsg(text);
   const answer = SM_BOT[lang].answers[key];
@@ -1275,21 +1250,21 @@ function smSend() {
     if (answer.capture) { smCapture = true; smCaptureStep = 1; }
     setTimeout(() => smSetOptions(answer.opts), 700);
   } else {
-    smBotMsg(lang === 'pt' ? 'Escolha uma opÃÂ§ÃÂ£o abaixo para eu poder ajudar melhor Ã°ÂÂÂ' : 'Please choose an option below so I can help you better Ã°ÂÂÂ');
+    smBotMsg(lang === 'pt' ? 'Escolha uma opção abaixo para eu poder ajudar melhor 👇' : 'Please choose an option below so I can help you better 👇');
     setTimeout(smShowMenu, 700);
   }
 }
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ End Chatbot Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ─── End Chatbot ─────────────────────────────────────────────
 </script>
 
 <script>
 const SERVICES = {
-  en: ['Select a serviceÃ¢ÂÂ¦','Online Reputation Management','SEO Strategy','Crisis Management','PR Services','General Inquiry'],
-  pt: ['Selecione um serviÃÂ§oÃ¢ÂÂ¦','GestÃÂ£o de ReputaÃÂ§ÃÂ£o Online','EstratÃÂ©gia de SEO','GestÃÂ£o de Crises','Assessoria de Imprensa','Consulta Geral']
+  en: ['Select a service…','Online Reputation Management','SEO Strategy','Crisis Management','PR Services','General Inquiry'],
+  pt: ['Selecione um serviço…','Gestão de Reputação Online','Estratégia de SEO','Gestão de Crises','Assessoria de Imprensa','Consulta Geral']
 };
 const PH = {
   name: { en: 'Your full name', pt: 'Seu nome completo' },
-  msg:  { en: 'Tell us about your situationÃ¢ÂÂ¦', pt: 'Conte-nos sobre sua situaÃÂ§ÃÂ£oÃ¢ÂÂ¦' }
+  msg:  { en: 'Tell us about your situation…', pt: 'Conte-nos sobre sua situação…' }
 };
 
 function setLang(lang) {
@@ -1311,15 +1286,15 @@ setLang(localStorage.getItem('sm-lang') || 'en');
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-// form Ã¢ÂÂ submits to FormSubmit.co (no account needed)
+// form — submits to FormSubmit.co (no account needed)
 async function handleSubmit(e) {
   e.preventDefault();
   const lang = document.body.classList.contains('lang-pt') ? 'pt' : 'en';
   const btn = document.getElementById('submit-btn');
-  const sending  = { en: 'SendingÃ¢ÂÂ¦', pt: 'EnviandoÃ¢ÂÂ¦' };
-  const success  = { en: 'Message Sent Ã¢ÂÂ', pt: 'Mensagem Enviada Ã¢ÂÂ' };
-  const errorMsg = { en: 'Error Ã¢ÂÂ try again', pt: 'Erro Ã¢ÂÂ tente novamente' };
-  const original = { en: 'Send Message Ã¢ÂÂ', pt: 'Enviar Mensagem Ã¢ÂÂ' };
+  const sending  = { en: 'Sending…', pt: 'Enviando…' };
+  const success  = { en: 'Message Sent ✓', pt: 'Mensagem Enviada ✓' };
+  const errorMsg = { en: 'Error — try again', pt: 'Erro — tente novamente' };
+  const original = { en: 'Send Message →', pt: 'Enviar Mensagem →' };
   btn.querySelector('[data-lang="' + lang + '"]').textContent = sending[lang];
   btn.disabled = true;
   const form = document.getElementById('contactForm');
@@ -1386,7 +1361,7 @@ document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click
     {l:'Forbes',o:0,s:0,p:true,c:'#60d88a',sz:10,fw:500},{l:'Fraud',o:0,s:130,p:false,c:'#234d31',sz:8.5,fw:300},{l:'Inc.com',o:0,s:240,p:true,c:'#5de09a',sz:10,fw:500},
     {l:'Bloomberg',o:1,s:0,p:true,c:'#a8ffd0',sz:10,fw:500},{l:'Lawsuit',o:1,s:72,p:false,c:'#1e4a2c',sz:8.5,fw:300},{l:'Google',o:1,s:144,p:true,c:'#78eaab',sz:10,fw:500},{l:'Scandal',o:1,s:216,p:false,c:'#1a3d25',sz:8.5,fw:300},{l:'Bing',o:1,s:288,p:true,c:'#4fd488',sz:10,fw:500},
     {l:'LinkedIn',o:2,s:0,p:true,c:'#3dbc72',sz:10,fw:500},{l:'Allegation',o:2,s:52,p:false,c:'#183322',sz:8,fw:300},{l:'Instagram',o:2,s:100,p:true,c:'#8fffc6',sz:10,fw:500},{l:'Rumor',o:2,s:152,p:false,c:'#183322',sz:8,fw:300},{l:'Wikipedia',o:2,s:200,p:true,c:'#70dca0',sz:10,fw:500},{l:'Crisis',o:2,s:252,p:false,c:'#1a3d25',sz:8,fw:300},{l:'Facebook',o:2,s:308,p:true,c:'#50c880',sz:10,fw:500},
-    {l:'Twitter\/X',o:3,s:0,p:true,c:'#a0f5cc',sz:9.5,fw:500},{l:'Complaint',o:3,s:45,p:false,c:'#122a1a',sz:8,fw:300},{l:'YouTube',o:3,s:90,p:true,c:'#60d88a',sz:9.5,fw:500},{l:'Exposed',o:3,s:135,p:false,c:'#122a1a',sz:8,fw:300},{l:'TikTok',o:3,s:180,p:true,c:'#88ffbe',sz:9.5,fw:500},{l:'Bad Press',o:3,s:225,p:false,c:'#122a1a',sz:8,fw:300},{l:'DuckDuckGo',o:3,s:270,p:true,c:'#45c878',sz:9.5,fw:500},{l:'Dispute',o:3,s:315,p:false,c:'#122a1a',sz:8,fw:300},
+    {l:'Twitter/X',o:3,s:0,p:true,c:'#a0f5cc',sz:9.5,fw:500},{l:'Complaint',o:3,s:45,p:false,c:'#122a1a',sz:8,fw:300},{l:'YouTube',o:3,s:90,p:true,c:'#60d88a',sz:9.5,fw:500},{l:'Exposed',o:3,s:135,p:false,c:'#122a1a',sz:8,fw:300},{l:'TikTok',o:3,s:180,p:true,c:'#88ffbe',sz:9.5,fw:500},{l:'Bad Press',o:3,s:225,p:false,c:'#122a1a',sz:8,fw:300},{l:'DuckDuckGo',o:3,s:270,p:true,c:'#45c878',sz:9.5,fw:500},{l:'Dispute',o:3,s:315,p:false,c:'#122a1a',sz:8,fw:300},
     {l:'Reddit',o:4,s:0,p:true,c:'#78eaab',sz:9.5,fw:500},{l:'Old News',o:4,s:40,p:false,c:'#0f2018',sz:8,fw:300},{l:'Pinterest',o:4,s:80,p:true,c:'#50c880',sz:9.5,fw:500},{l:'Accusation',o:4,s:120,p:false,c:'#0f2018',sz:8,fw:300},{l:'Threads',o:4,s:160,p:true,c:'#a0f5cc',sz:9.5,fw:500},{l:'Negative',o:4,s:200,p:false,c:'#0f2018',sz:8,fw:300},{l:'Yahoo',o:4,s:240,p:true,c:'#60d88a',sz:9.5,fw:500},{l:'Snapchat',o:4,s:280,p:true,c:'#3dbc72',sz:9.5,fw:500},{l:'Wired',o:4,s:320,p:true,c:'#8fffc6',sz:9.5,fw:500}
   ];
   var SIZE=c.offsetWidth||310,SCALE=SIZE/310,CX=SIZE/2,CY=SIZE/2;
