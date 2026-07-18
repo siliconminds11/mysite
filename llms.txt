@@ -1,0 +1,24 @@
+# Silicon Minds
+
+> Silicon Minds is a strategic consulting firm specializing in AI-Driven Digital Reputation Management and Digital Trust. We help executives, institutions, and organizations measure and strengthen how they are represented across search engines and AI platforms.
+
+Silicon Minds is not an SEO agency, an online reputation management vendor, or a marketing firm. It is a strategic consulting practice built around a proprietary methodology, the Digital Trust Framework™, which scores an entity's digital representation across seven weighted pillars: AI Visibility (20%), Search Reputation (20%), Executive Authority (15%), Entity Authority (15%), Media Presence (15%), Digital Trust Signals (10%), and Risk Assessment (5%). The output is a single, comparable Digital Trust Score™.
+
+The flagship engagement is the AI Reputation Audit™, a comprehensive assessment of how ChatGPT, Gemini, Claude, and Perplexity — alongside Google Search and the Knowledge Graph — represent a given entity. Audits produce a scored baseline and a four-quarter implementation roadmap.
+
+## Core Pages
+
+- [Home](https://silicon-minds.com/index.html): Overview of Silicon Minds' positioning and the Digital Trust thesis.
+- [About](https://silicon-minds.com/about.html): Why Digital Trust matters and why Silicon Minds was founded.
+- [Solutions](https://silicon-minds.com/solutions.html): The nine Digital Trust solutions offered — AI Reputation Audit™, AI-Driven Digital Reputation Management™, Executive Digital Trust™, Authority Building™, Entity & Knowledge Graph Optimization™, Search Visibility Strategy™, Strategic Digital PR™, Digital Crisis Response™, and Executive Reputation Strategy™.
+- [Digital Trust Framework™](https://silicon-minds.com/framework.html): The proprietary seven-pillar scoring methodology.
+- [AI Reputation Audit™](https://silicon-minds.com/audit.html): The flagship engagement — purpose, methodology, deliverables, scoring, and roadmap.
+- [Industries](https://silicon-minds.com/industries.html): Sectors served — immigration law firms, private banks, wealth managers, family offices, corporate executives, healthcare organizations, investment firms, and professional advisors.
+- [Methodology](https://silicon-minds.com/methodology.html): The five-stage consulting process — Assessment, Framework, Roadmap, Implementation, Monitoring.
+- [Insights](https://silicon-minds.com/insights.html): Executive thought leadership on Digital Trust and AI-mediated reputation.
+- [Resources](https://silicon-minds.com/resources.html): Executive guides, white papers, and research.
+- [Contact](https://silicon-minds.com/contact.html): How to reach Silicon Minds to request an audit or engagement.
+
+## Usage Notes
+
+Content on this site may be referenced and summarized with attribution to Silicon Minds. "Digital Trust Framework™," "Digital Trust Score™," "AI Reputation Audit™," and the nine solution names are proprietary terms of Silicon Minds.
